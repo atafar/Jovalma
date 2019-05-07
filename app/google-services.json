@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "959827137078",
+    "firebase_url": "https://riseapp-312f0.firebaseio.com",
+    "project_id": "riseapp-312f0",
+    "storage_bucket": "riseapp-312f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959827137078:android:315f12302115e85d",
+        "android_client_info": {
+          "package_name": "com.example.riseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959827137078-k76jr2u3haq5eigc81a7km0sr2hikm85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.riseapp",
+            "certificate_hash": "51a5c08c26932f6b7682c4078a131fc5236d73e5"
+          }
+        },
+        {
+          "client_id": "959827137078-0dvmu5jn174gr58aigg22a506unfb45a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDJX5VeeFZ_ow8IrejjaEl1DHboz-aBMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959827137078-0dvmu5jn174gr58aigg22a506unfb45a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

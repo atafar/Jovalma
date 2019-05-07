@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RiseApp</string>
+    <string name="registrat">Regístrate</string>
+    <string name="accedeix">Acceder</string>
+    <string name="password">Contraseña</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="emptyStringsError">S\'han d\'omplir tots els camps</string>
+    <string name="email" translatable="false">email</string>
+    <string name="titleRegistre">Registre</string>
+    <string name="repeatPassword">Escriu de nou la contrasenya</string>
+    <string name="user_exists_error">Aquest email ya esta registrat</string>
+    <string name="user_weakpass_error">La contrasenya es molt curta</string>
+    <string name="notEqualPassReg">Les contrasenyes no coincideixen</string>
+    <string name="notValidEmail">L\'email no es vàlid</string>
+    <string name="info">Información</string>
+    <string name="mapa">Contacta</string>
+    <string name="account">Perfil</string>
+</resources>
