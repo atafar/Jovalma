@@ -81,7 +81,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="@color/loginButton"
-        android:onClick="goToCalendar"
+        android:onClick="goToMenu"
         android:text="@string/accedeix"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
