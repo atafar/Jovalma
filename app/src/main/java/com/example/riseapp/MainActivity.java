@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AnimatorSet animatorSet;
 
-    //private UsuariRepositori mUserRepository;
+//    private UsuariRepositori mUserRepository;
 
     private EditText etUsuari, etPassword;
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Log.d(MainActivity.class.getSimpleName(),Boolean.toString(FirebaseApp.initializeApp(this).isDefaultApp()));
+//        Log.d(MainActivity.class.getSimpleName(), Boolean.toString(FirebaseApp.initializeApp(this).isDefaultApp()));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         animatorSet.start();
 
         //User database
-        //mUserRepository = new UsuariRepositori(getApplication());
+//        mUserRepository = new UsuariRepositori(getApplication());
 
         etUsuari = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void goToCalendar(View view) {
+    public void goToMenu(View view) {
         try {
             String userText = etUsuari.getText().toString();
             String passText = etPassword.getText().toString();
@@ -71,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Intent goCalendar = new Intent(getBaseContext(), Menu.class);
-                                startActivity(goCalendar);
+                                Intent goMenu = new Intent(getBaseContext(), Menu.class);
+                                startActivity(goMenu);
                             } else {
                                 Toast.makeText(getBaseContext(), "El usuario o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
                             }
