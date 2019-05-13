@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(goMenu);
                             } else {
                                 Log.w("ErrorLogin", "signInWithEmail:failure", task.getException());
-                                Toast.makeText(getBaseContext(), "El usuario o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
+
+                                Toast.makeText(getBaseContext(), getResources().getString(R.string.loginIncorrecto), Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
