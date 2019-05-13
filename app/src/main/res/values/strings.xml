@@ -15,4 +15,5 @@
     <string name="info">Información</string>
     <string name="mapa">Contacta</string>
     <string name="account">Perfil</string>
+    <string name="loginIncorrecto">El usuario o contraseña son incorrectos</string>
 </resources>
