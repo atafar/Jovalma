@@ -19,44 +19,44 @@ public class Menu extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
 //        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-    //para mantener el fragment seleccionado cuando se rota
-//        if (savedInstanceState == null) {
-//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                new CalendariFragment()).commit();
-//    }
+        if (savedInstanceState == null) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new ProfileFragment()).commit();
+    }
 }
-//
+
 //    public void canviarIdioma(View view){
 //        Intent change = new Intent(this, Idioma.class);
 //        startActivity(change);
 //    }
-
-    public void sortir(View view){
-        Intent tancar = new Intent(this, MainActivity.class);
-        startActivity(tancar);
-    }
-
-//    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-//            new BottomNavigationView.OnNavigationItemSelectedListener() {
-//                @Override
-//                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                    Fragment selectedFragment = null;
 //
-//                    switch (item.getItemId()) {
-//                        case R.id.navigation_ajusts:
-//                            selectedFragment = new AjustsFragment();
-//                            break;
-//                        case R.id.navigation_calendari:
+//    public void sortir(View view){
+//        Intent tancar = new Intent(this, MainActivity.class);
+//        startActivity(tancar);
+//    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.navigation_perfil:
+                            selectedFragment = new ProfileFragment();
+                            break;
+//                        case R.id.navigation_mapa:
 //                            selectedFragment = new CalendariFragment();
 //                            break;
-//                        case R.id.navigation_progres:
+//                        case R.id.navigation_info:
 //                            selectedFragment = new ProgresFragment();
-//                    }
-//
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            selectedFragment).commit();
-//
-//                    return true;
-//                }
-//            };
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
 }
