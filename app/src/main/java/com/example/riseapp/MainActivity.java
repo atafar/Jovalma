@@ -68,33 +68,32 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
             );
-        } catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             Toast.makeText(this, getResources().getText(R.string.emptyStringsError), Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void btnRegistro(View v){
+    public void btnRegistro(View v) {
         Intent intent = new Intent(this, RegistroUsuario.class);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1){
-            if(resultCode == RESULT_OK){
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
                 Intent goMenu = new Intent(getBaseContext(), Menu.class);
                 startActivity(goMenu);
             }
         }
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        Intent goMenu = new Intent(getBaseContext(), Menu.class);
-//                startActivity(goMenu);
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Intent goMenu = new Intent(getBaseContext(), Menu.class);
+        startActivity(goMenu);
+    }
 }
