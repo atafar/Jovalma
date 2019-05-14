@@ -1,101 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroUsuario">
+    tools:context=".RegistroUsuario"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_registro_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/titleRegistre"
+                android:textAlignment="center"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:textSize="36sp"
+                />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
-        android:text="@string/titleRegistre"
-        android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/appIcon"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_app"
+                />
+            <EditText
+                android:id="@+id/et_registro_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"
 
-    <EditText
-        android:id="@+id/et_registro_contra"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_registro_email" />
 
-    <EditText
-        android:id="@+id/et_registro_contra_repe"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_repitecontra" />
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                />
 
-    <TextView
-        android:id="@+id/tv_repitecontra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/repeatPassword"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_registro_contra" />
 
-    <Button
-        android:id="@+id/bt_aceptaRegistoUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/loginButton"
-        android:onClick="btnAcepta"
-        android:text="@android:string/ok"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt_cancelaRegistroUser"
-        app:layout_constraintTop_toBottomOf="@+id/et_registro_contra_repe"
-        app:layout_constraintVertical_bias="0.37" />
 
-    <Button
-        android:id="@+id/bt_cancelaRegistroUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark"
-        android:onClick="btnCancel"
-        android:text="@android:string/cancel"
-        app:layout_constraintEnd_toStartOf="@+id/bt_aceptaRegistoUser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bt_aceptaRegistoUser" />
-</android.support.constraint.ConstraintLayout>
+            <EditText
+                android:id="@+id/et_registro_contra"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="45dp"
+                android:ems="10"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+
+                android:hint="@string/password"
+                android:inputType="textPassword"
+               />
+
+            <EditText
+                android:id="@+id/et_registro_contra_repe"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="45dp"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+
+                android:ems="10"
+                android:hint="@string/repeteix_contrasenya"
+                android:inputType="textPassword"
+                 />
+            <EditText
+                android:id="@+id/et_registro_nombre_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="45dp"
+                android:ems="10"
+                android:hint="@string/nom_usuario"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/sp_gender_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="50dp"
+
+
+
+                    android:dropDownSelector="@android:color/white"
+                    android:imeOptions="actionNext"
+                     />
+
+                <View
+                    android:id="@+id/v_center"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerInParent="true" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/et_dateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="45dp"
+
+                    android:clickable="true"
+
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:hint="@string/data_de_naixement"
+
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/et_registro_ciudad"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="45dp"
+                android:ems="10"
+                android:hint="@string/ciutat"
+
+                />
+            <CheckBox
+                android:id="@+id/chk_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="40dp"
+                android:drawablePadding="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+
+                android:hint="Accepto els termes i condicions"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_repitecontra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/repeatPassword"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                />
+            <Button
+                android:id="@+id/bt_aceptaRegistoUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/aspecto_boton_azul"
+                android:onClick="btnAcepta"
+                android:text="@string/registrat"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/backgroundBar" />
+
+            <TextView
+                android:id="@+id/tv_alternative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/ja_tens_un_compte_accedeix_al_teu_compte"/>
+
+            <Button
+                android:id="@+id/bt_cancelaRegistroUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/aspecto_boton_rojo"
+                android:onClick="btnCancel"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/accedeix"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                 />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

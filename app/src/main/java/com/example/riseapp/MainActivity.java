@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         etUsuari = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
 
+
         mAuth = FirebaseAuth.getInstance();
     }
 
