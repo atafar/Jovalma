@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent" android:layout_width="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -58,18 +61,31 @@
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/mainfab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/menuicon" />
-    <!--android:layout_alignBottom="@+id/layout_ejercicios"-->
-    <!--android:layout_alignRight="@+id/layout_ejercicios"-->
-    <!--android:layout_margin="16dp"-->
-    <!--app:layout_anchor=""-->
-    <!--app:layout_anchorGravity="" -->
+        app:fab_labelStyle="@style/custom_fab"
+        >
+
+        <com.getbase.floatingactionbutton.AddFloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            app:fab_title="Mis dietas"
+            />
+
+        <com.getbase.floatingactionbutton.AddFloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_title="Editar perfil"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 
 </android.support.design.widget.CoordinatorLayout>
 
