@@ -1,12 +1,17 @@
 package com.example.riseapp;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,9 +22,21 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
+
 public class RegistroUsuario extends AppCompatActivity {
 
-    EditText mEmail, mPass, mPassRepe;
+    EditText mEmail, mPass, mPassRepe,mDateView;
+    private Spinner spinnerGender;
+    //Spinner
+    private String[] strings;
+    private List<String> items;
+    private ArrayAdapter<String> adapter;
+    private DatePickerDialog datePickerDialog;
+
     Button btnOk, btnCancel;
     private int REQUEST_CODE;
     @Override
@@ -28,7 +45,47 @@ public class RegistroUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_registro_usuario);
         mEmail = findViewById(R.id.et_registro_email);
         mPass = findViewById(R.id.et_registro_contra);
+        mDateView = findViewById(R.id.et_dateOfBirth);
         mPassRepe = findViewById(R.id.et_registro_contra_repe);
+        //EMPIEZA SPINNER
+        spinnerGender = findViewById(R.id.sp_gender_spinner);
+
+        strings = getResources().getStringArray(R.array.genders);
+        items = new ArrayList<>(Arrays.asList(strings));
+        adapter = new ArrayAdapter<>(this, R.layout.spinner, items);
+
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        spinnerGender.setAdapter(adapter);
+        //ACABA SPINNER
+
+        //CALENDARIO DATE PICKER
+        Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        final int mDay = c.get(Calendar.DAY_OF_MONTH);
+        datePickerDialog = new DatePickerDialog(RegistroUsuario.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        mDateView.setText(day + "/" + month + "/" + year);
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.getDatePicker().setFirstDayOfWeek(Calendar.MONDAY);
+
+        // ACABA CALENDARIO DATE PICKER
+        mDateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*if (MainActivity.isKeyboardShown(v)) {
+                    MainActivity.hideKeyboard(v);
+                }
+                if (RegisterActivity.this.getCurrentFocus() != null) {
+                    RegisterActivity.this.getCurrentFocus().clearFocus();
+                }*/
+                datePickerDialog.show();
+            }
+        });
     }
 
     public void btnAcepta(View v){

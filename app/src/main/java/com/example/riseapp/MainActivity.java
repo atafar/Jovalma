@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         etUsuari = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
 
+
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -88,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+    /**@Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         Intent goMenu = new Intent(getBaseContext(), Menu.class);
         startActivity(goMenu);
-    }
+    }**/
 }
