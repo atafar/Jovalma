@@ -200,12 +200,47 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/aspecto_boton_rojo"
                 android:onClick="btnCancel"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
                 android:text="@string/accedeix"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                  />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+
+                <ImageButton
+                    android:id="@+id/btnEnglish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/lang_button_background"
+                    android:src="@drawable/icon_english" />
+
+                <ImageButton
+                    android:id="@+id/btnSpanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/lang_button_background"
+                    android:src="@drawable/icon_spanish" />
+                <ImageButton
+                    android:id="@+id/btnCatalan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/lang_button_background"
+                    android:src="@drawable/icon_catalan" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
