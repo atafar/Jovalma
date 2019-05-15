@@ -1,5 +1,6 @@
 package com.example.riseapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,7 +23,7 @@ public class ProfileFragment extends Fragment {
         View activity = inflater.inflate(R.layout.profile_fragment, container, false);
         TextView nombreUsuario = activity.findViewById(R.id.nombreUsuario);
 
-        //Botón fab1
+        //Botón Dietas
         com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton = activity.findViewById(R.id.fab1);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,12 +32,13 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        //Botón fab2
+        //Botón EditarPerfil
         com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton2 = activity.findViewById(R.id.fab2);
         floatingActionButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent goToEdit = new Intent(getContext(), EditarPerfil.class);
+                startActivity(goToEdit);
             }
         });
 

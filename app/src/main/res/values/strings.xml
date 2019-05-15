@@ -17,13 +17,14 @@
     <string name="account">Perfil</string>
     <string name="loginIncorrecto">El usuari o contrasenya són incorrectes</string>
     <string name="repeteix_contrasenya">Repeteix contrasenya</string>
-    <string name="nom_usuario">Nom</string>
+    <string name="nom_usuario">Nom i cognoms</string>
     <string name="ciutat">Ciutat</string>
     <string name="data_de_naixement">Data de naixement</string>
     <string name="ja_tens_un_compte_accedeix_al_teu_compte">Ja tens un compte? Accedeix al teu compte</string>
     <string name="termes_i_condicions">Termes i condicions</string>
     <string name="forum">Foro</string>
     <string name="quisom">Quiénes somos</string>
+    <string name="guardar">Guardar</string>
     <string-array name="genders">
         <item>Escolleix un</item>
         <item>Home</item>
