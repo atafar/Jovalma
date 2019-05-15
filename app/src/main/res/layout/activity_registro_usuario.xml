@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -22,12 +23,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:fontFamily="@font/roboto"
+                android:fontFamily="@font/roboto_thin"
                 android:text="@string/titleRegistre"
                 android:textAlignment="center"
                 android:textAppearance="@android:style/TextAppearance.Material"
-                android:textSize="36sp"
-                />
+                android:textSize="36sp" />
 
             <ImageView
                 android:id="@+id/appIcon"
@@ -151,21 +151,10 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
 
-                android:hint="Accepto els termes i condicions"
+                android:hint="@string/accepto_els_termes_i_condicions"
                 />
 
 
-            <TextView
-                android:id="@+id/tv_repitecontra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/repeatPassword"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
-                />
             <Button
                 android:id="@+id/bt_aceptaRegistoUser"
                 android:layout_width="match_parent"
@@ -241,6 +230,16 @@
                     android:src="@drawable/icon_catalan" />
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/tv_tac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/termes_i_condicions"
+                />
         </LinearLayout>
     </ScrollView>
 

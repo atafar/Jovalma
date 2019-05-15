@@ -16,4 +16,19 @@
     <string name="titleRegistre">Register</string>
     <string name="user_weakpass_error">The password it\'s too short</string>
     <string name="username">Username</string>
+    <string name="emptyStringsError">" All fields must be filled"</string>
+    <string name="ja_tens_un_compte_accedeix_al_teu_compte">Already have an account? Log in to your account</string>
+    <string name="notEqualPassReg">Passwords do not match</string>
+    <string name="notValidEmail">The email is not valid</string>
+    <string name="loginIncorrecto">" The email or password are incorrect"</string>
+    <string name="user_exists_error">"This email is already registered "</string>
+    <string name="email">Email</string>
+    <string name="no_tens_un_compte_registra_t">" Do not have an account? Sign up"</string>
+    <string name="accepto_els_termes_i_condicions">" I accept the terms and conditions"</string>
+    <string-array name="genders">
+        <item>Choose one</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
 </resources>

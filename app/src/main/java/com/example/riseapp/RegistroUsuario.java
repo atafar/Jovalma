@@ -2,18 +2,25 @@ package com.example.riseapp;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.riseapp.Helper.LocaleHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,24 +36,38 @@ import java.util.List;
 
 public class RegistroUsuario extends AppCompatActivity {
 
-    EditText mEmail, mPass, mPassRepe,mDateView;
+    EditText etEmail, etPass, etPassRepe,etDateView, etName,etCity;
+    private TextView tv_alternative,tv_tac;
     private Spinner spinnerGender;
+    private CheckBox checkBoxConditions;
     //Spinner
     private String[] strings;
     private List<String> items;
     private ArrayAdapter<String> adapter;
     private DatePickerDialog datePickerDialog;
-
+    private ImageButton btnEnglish, btnSpanish, btnCatalan;
     Button btnOk, btnCancel;
     private int REQUEST_CODE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
-        mEmail = findViewById(R.id.et_registro_email);
-        mPass = findViewById(R.id.et_registro_contra);
-        mDateView = findViewById(R.id.et_dateOfBirth);
-        mPassRepe = findViewById(R.id.et_registro_contra_repe);
+        etEmail = findViewById(R.id.et_registro_email);
+        etPass = findViewById(R.id.et_registro_contra);
+        etDateView = findViewById(R.id.et_dateOfBirth);
+        btnOk=findViewById(R.id.bt_aceptaRegistoUser);
+        btnCancel=findViewById(R.id.bt_cancelaRegistroUser);
+        etPassRepe = findViewById(R.id.et_registro_contra_repe);
+        etName=findViewById(R.id.et_registro_nombre_usuario);
+        etCity=findViewById(R.id.et_registro_ciudad);
+        checkBoxConditions=findViewById(R.id.chk_conditions);
+        btnEnglish = findViewById(R.id.btnEnglish);
+        btnSpanish = findViewById(R.id.btnSpanish);
+        btnCatalan = findViewById(R.id.btnCatalan);
+        tv_alternative= findViewById(R.id.tv_alternative);
+        tv_tac=findViewById(R.id.tv_tac);
+
+
         //EMPIEZA SPINNER
         spinnerGender = findViewById(R.id.sp_gender_spinner);
 
@@ -57,6 +78,44 @@ public class RegistroUsuario extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerGender.setAdapter(adapter);
         //ACABA SPINNER
+        //SELECCION IDIOMA
+        String lang = AppPreferences.getSettings().getString("lang", "");
+
+        try {
+            assert lang != null;
+            switch (lang) {
+                case "en":
+                    btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+                    btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnEnglish.setEnabled(false);
+                    btnSpanish.setEnabled(true);
+                    btnCatalan.setEnabled(true);
+                    updateView(lang);
+                    break;
+                case "es":
+                    btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+                    btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnEnglish.setEnabled(true);
+                    btnSpanish.setEnabled(false);
+                    btnCatalan.setEnabled(true);
+                    updateView(lang);
+                    break;
+                case "ca":
+                    btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+                    btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+                    btnEnglish.setEnabled(true);
+                    btnSpanish.setEnabled(true);
+                    btnCatalan.setEnabled(false);
+                    updateView(lang);
+                    break;
+            }
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+        //ACABA SELECCION IDIOMA
 
         //CALENDARIO DATE PICKER
         Calendar c = Calendar.getInstance();
@@ -68,13 +127,13 @@ public class RegistroUsuario extends AppCompatActivity {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        mDateView.setText(day + "/" + month + "/" + year);
+                        etDateView.setText(day + "/" + month + "/" + year);
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setFirstDayOfWeek(Calendar.MONDAY);
 
         // ACABA CALENDARIO DATE PICKER
-        mDateView.setOnClickListener(new View.OnClickListener() {
+        etDateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*if (MainActivity.isKeyboardShown(v)) {
@@ -86,14 +145,35 @@ public class RegistroUsuario extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+        //LISTENERS BOTONES
+        btnEnglish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectEnglish();
+            }
+        });
+
+        btnSpanish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectSpanish();
+            }
+        });
+
+        btnCatalan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectCatalan();
+            }
+        });
     }
 
     public void btnAcepta(View v){
         Log.d(RegistroUsuario.class.getSimpleName(), "Acepta");
         try{
-            String email = mEmail.getText().toString();
-            String pass = mPass.getText().toString();
-            String passRepe = mPassRepe.getText().toString();
+            String email = etEmail.getText().toString();
+            String pass = etPass.getText().toString();
+            String passRepe = etPassRepe.getText().toString();
 
             if(pass.equals(passRepe)){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -128,5 +208,80 @@ public class RegistroUsuario extends AppCompatActivity {
         setResult(RESULT_CANCELED);
         finish();
         Log.d(RegistroUsuario.class.getSimpleName(), "Cancel");
+    }
+
+    private void updateView(String lang) {
+        Context context = LocaleHelper.setLocale(this, lang);
+
+
+        etEmail.setHint( context.getResources().getString(R.string.email));
+        etPass.setHint( context.getResources().getString(R.string.password));
+        btnOk.setText( context.getResources().getString(R.string.registrat));
+        btnCancel.setText( context.getResources().getString(R.string.accedeix));
+        etName.setHint(context.getResources().getString(R.string.nom_usuario));
+        etPassRepe.setHint(context.getResources().getString(R.string.repeatPassword));
+        etDateView.setHint(context.getResources().getString(R.string.data_de_naixement));
+        etCity.setHint(context.getResources().getString(R.string.ciutat));
+        checkBoxConditions.setText(context.getResources().getString(R.string.accepto_els_termes_i_condicions));
+        tv_alternative.setText( context.getResources().getString(R.string.ja_tens_un_compte_accedeix_al_teu_compte));
+        tv_tac.setText(context.getResources().getString(R.string.termes_i_condicions));
+
+        //Save Spinner
+        AppPreferences.getEditor().putInt("spinnerSelection", spinnerGender.getSelectedItemPosition());
+        AppPreferences.getEditor().commit();
+
+        //New Spinner
+        strings = getResources().getStringArray(R.array.genders);
+        items = new ArrayList<>(Arrays.asList(strings));
+        adapter = new ArrayAdapter<>(this, R.layout.spinner, items);
+
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        spinnerGender.setAdapter(adapter);
+        spinnerGender.setSelection(AppPreferences.getSettings().getInt("spinnerSelection", 0));
+
+    }
+    public void selectEnglish() {
+        btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+        btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnEnglish.setEnabled(false);
+        btnSpanish.setEnabled(true);
+        btnCatalan.setEnabled(true);
+
+        AppPreferences.getEditor().putString("lang", "en");
+        AppPreferences.getEditor().commit();
+        updateView("en");
+        spinLanguage(btnEnglish);
+    }
+
+    public void selectSpanish() {
+        btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+        btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnEnglish.setEnabled(true);
+        btnSpanish.setEnabled(false);
+        btnCatalan.setEnabled(true);
+
+        AppPreferences.getEditor().putString("lang", "es");
+        AppPreferences.getEditor().commit();
+        updateView("es");
+        spinLanguage(btnSpanish);
+    }
+
+    public void selectCatalan() {
+        btnEnglish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnSpanish.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background));
+        btnCatalan.setBackground(ContextCompat.getDrawable(this, R.drawable.lang_button_background_selected));
+        btnEnglish.setEnabled(true);
+        btnSpanish.setEnabled(true);
+        btnCatalan.setEnabled(false);
+
+        AppPreferences.getEditor().putString("lang", "ca");
+        AppPreferences.getEditor().commit();
+        updateView("ca");
+        spinLanguage(btnCatalan);
+    }
+    public void spinLanguage(final ImageButton langButton) {
+        langButton.startAnimation(AnimationUtils.loadAnimation(RegistroUsuario.this, R.anim.rotate_lang_button));
     }
 }

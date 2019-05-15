@@ -6,4 +6,28 @@
     <string name="ciutat">Ciudad</string>
     <string name="data_de_naixement">Fecha de nacimiento</string>
     <string name="emptyStringsError">Se han de rellenar todos los campos</string>
+    <string name="info">Información</string>
+    <string name="ja_tens_un_compte_accedeix_al_teu_compte">Ya tienes una cuenta? Accede</string>
+    <string name="mapa">Contacta</string>
+    <string name="nom_usuario">Nombre</string>
+    <string name="loginIncorrecto">El correo o la contraseña son incorrectos</string>
+    <string name="notEqualPassReg">Las contraseñas no coinciden</string>
+    <string name="notValidEmail">El correo no es válido</string>
+    <string name="registrat">Registrate</string>
+    <string name="repeatPassword">Escribe la contraseña otra vez</string>
+    <string name="repeteix_contrasenya">Repite tu contraseña</string>
+    <string name="termes_i_condicions">Términos y condiciones</string>
+    <string name="titleRegistre">Registro</string>
+    <string name="user_exists_error">El correo ya esta registrado</string>
+    <string name="user_weakpass_error">La contraseña es demasiado corta</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correu</string>
+    <string name="no_tens_un_compte_registra_t">No tienes cuenta? Registrate</string>
+    <string name="accepto_els_termes_i_condicions">Acepto los términos y condiciones</string>
+    <string-array name="genders">
+        <item>Elige uno</item>
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
 </resources>

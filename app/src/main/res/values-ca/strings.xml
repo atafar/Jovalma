@@ -8,18 +8,26 @@
     <string name="emptyStringsError">S\'han d\'omplir tots els camps</string>
     <string name="info">Informació</string>
     <string name="ja_tens_un_compte_accedeix_al_teu_compte">Ja tens un compte? Accedeix al teu compte</string>
-    <string name="loginIncorrecto">El usuari o contrasenya són incorrectes</string>
+    <string name="loginIncorrecto">El correu o contrasenya són incorrectes</string>
     <string name="mapa">Contacta</string>
     <string name="nom_usuario">Nom</string>
     <string name="notEqualPassReg">Les contrasenyes no coincideixen</string>
-    <string name="notValidEmail">L\'email no és vàlid</string>
+    <string name="notValidEmail">El correu no és vàlid</string>
     <string name="password">Contrasenya</string>
     <string name="registrat">Registra\'t</string>
-    <string name="repeatPassword">Escriu de nou la contrasenya</string>
+    <string name="repeatPassword">Torna a escriure la contrasenya</string>
     <string name="repeteix_contrasenya">Repeteix contrasenya</string>
     <string name="termes_i_condicions">Termes i condicions</string>
     <string name="titleRegistre">Registre</string>
-    <string name="user_exists_error">Aquest email ja esta registrat</string>
+    <string name="user_exists_error">Aquest correu ja esta registrat</string>
     <string name="user_weakpass_error">La contrasenya es molt curta</string>
     <string name="username">Nombre de usuario</string>
+    <string name="email">Correu electrònic</string>
+    <string name="no_tens_un_compte_registra_t">No tens un compte? Registra\'t</string>
+    <string name="accepto_els_termes_i_condicions">Accepto els termes i condicions</string>
+    <string-array name="genders">
+        <item>Escolleix un</item>
+        <item>Home</item>
+        <item>Dona</item>
+    </string-array>
 </resources>
