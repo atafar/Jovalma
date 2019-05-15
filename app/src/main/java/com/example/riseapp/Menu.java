@@ -47,10 +47,10 @@ public class Menu extends AppCompatActivity {
                             selectedFragment = new ProfileFragment();
                             break;
 //                        case R.id.navigation_mapa:
-//                            selectedFragment = new CalendariFragment();
+//                            selectedFragment = new Fragmente();
 //                            break;
 //                        case R.id.navigation_info:
-//                            selectedFragment = new ProgresFragment();
+//                            selectedFragment = new Fragment();
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
