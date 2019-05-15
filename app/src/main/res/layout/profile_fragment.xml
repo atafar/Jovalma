@@ -71,18 +71,21 @@
         app:fab_labelStyle="@style/custom_fab"
         >
 
-        <com.getbase.floatingactionbutton.AddFloatingActionButton
+        <com.getbase.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
             app:fab_title="Mis dietas"
+            app:fab_icon="@drawable/ic_favorite"
             />
 
-        <com.getbase.floatingactionbutton.AddFloatingActionButton
+        <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_title="Editar perfil"/>
+            app:fab_title="Editar perfil"
+            app:fab_icon="@drawable/ic_edit"
+            />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
