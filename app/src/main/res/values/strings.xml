@@ -3,19 +3,19 @@
     <string name="registrat">Registra\'t</string>
     <string name="accedeix">Accedeix</string>
     <string name="password">Contrasenya</string>
-    <string name="username">Nom d\'usuari</string>
+    <string name="username">Nombre de usuario</string>
     <string name="emptyStringsError">S\'han d\'omplir tots els camps</string>
-    <string name="email">Email</string>
+    <string name="email" translatable="false">Email</string>
     <string name="titleRegistre">Registre</string>
-    <string name="repeatPassword">Torna a escriure la contrasenya</string>
-    <string name="user_exists_error">Aquest correu ja esta registrat</string>
+    <string name="repeatPassword">Escriu de nou la contrasenya</string>
+    <string name="user_exists_error">Aquest email ja esta registrat</string>
     <string name="user_weakpass_error">La contrasenya es molt curta</string>
     <string name="notEqualPassReg">Les contrasenyes no coincideixen</string>
     <string name="notValidEmail">L\'email no es vàlid</string>
     <string name="info">Informació</string>
     <string name="mapa">Contacta</string>
     <string name="account">Perfil</string>
-    <string name="loginIncorrecto">El correu o contrasenya són incorrectes</string>
+    <string name="loginIncorrecto">El usuari o contrasenya són incorrectes</string>
     <string name="repeteix_contrasenya">Repeteix contrasenya</string>
     <string name="nom_usuario">Nom</string>
     <string name="ciutat">Ciutat</string>
@@ -24,6 +24,9 @@
     <string name="termes_i_condicions">Termes i condicions</string>
     <string name="no_tens_un_compte_registra_t">No tens un compte? Registra\'t</string>
     <string name="accepto_els_termes_i_condicions">Accepto els termes i condicions</string>
+    <string name="forum">Fòrum</string>
+    <string name="quisom">Quí som?</string>
+    <string name="guardar">Desar</string>
     <string-array name="genders">
         <item>Escolleix un</item>
         <item>Home</item>

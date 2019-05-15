@@ -3,14 +3,23 @@
 
     <item
         android:id="@+id/navigation_info"
-        android:icon="@drawable/info"
+        android:icon="@drawable/ic_info"
         android:title="@string/info" />
     <item
         android:id="@+id/navigation_mapa"
-        android:icon="@drawable/mapa"
+        android:icon="@drawable/ic_map"
         android:title="@string/mapa" />
     <item
+        android:id="@+id/navigation_empresa"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/quisom" />
+    <item
+        android:id="@+id/navigation_forum"
+        android:icon="@drawable/ic_forum"
+        android:title="@string/forum" />
+    <item
         android:id="@+id/navigation_perfil"
-        android:icon="@drawable/account"
+        android:icon="@drawable/ic_account"
         android:title="@string/account" />
+
 </menu>
