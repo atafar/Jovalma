@@ -8,5 +8,6 @@
     <color name="background">#ffffff</color>
     <color name="backgroundBar">#3d8af7</color>
     <color name="white">#ffffff</color>
+    <color name="black_transparent">#B2000000</color>
     <color name="transparent">@android:color/transparent</color>
 </resources>

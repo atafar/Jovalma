@@ -3,6 +3,7 @@ package com.example.riseapp;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,26 @@ public class ProfileFragment extends Fragment {
         View activity = inflater.inflate(R.layout.profile_fragment, container, false);
         TextView nombreUsuario = activity.findViewById(R.id.nombreUsuario);
 
+        //Botón fab1
+        com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton = activity.findViewById(R.id.fab1);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        //Botón fab2
+        com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton2 = activity.findViewById(R.id.fab2);
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        //Información de usuario
         try {
             user = FirebaseAuth.getInstance().getCurrentUser();
 
