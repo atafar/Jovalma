@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RiseApp</string>
+    <string name="accedeix">Login</string>
+    <string name="account">Profile</string>
+    <string name="ciutat">City</string>
+    <string name="data_de_naixement">Date of birth</string>
+    <string name="info">Information</string>
+    <string name="mapa">Contact</string>
+    <string name="nom_usuario">Name</string>
+    <string name="password">Password</string>
+    <string name="registrat">Register</string>
+    <string name="repeatPassword">Write again your password</string>
+    <string name="repeteix_contrasenya">Repeat your password</string>
+    <string name="termes_i_condicions">Terms and conditions</string>
+    <string name="titleRegistre">Register</string>
+    <string name="user_weakpass_error">The password it\'s too short</string>
+    <string name="username">Username</string>
+</resources>
