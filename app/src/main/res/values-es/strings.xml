@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RiseApp</string>
+    <string name="accedeix">Accede</string>
+    <string name="account">Perfil</string>
+    <string name="ciutat">Ciudad</string>
+    <string name="data_de_naixement">Fecha de nacimiento</string>
+    <string name="emptyStringsError">Se han de rellenar todos los campos</string>
+</resources>
