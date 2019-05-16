@@ -24,8 +24,8 @@ public class ProfileFragment extends Fragment {
         TextView nombreUsuario = activity.findViewById(R.id.nombreUsuario);
 
         //Botón Dietas
-        com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton = activity.findViewById(R.id.fab1);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        com.getbase.floatingactionbutton.FloatingActionButton fabDietas = activity.findViewById(R.id.fabDietas);
+        fabDietas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -33,12 +33,21 @@ public class ProfileFragment extends Fragment {
         });
 
         //Botón EditarPerfil
-        com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton2 = activity.findViewById(R.id.fab2);
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+        com.getbase.floatingactionbutton.FloatingActionButton fabEditarPerfil = activity.findViewById(R.id.fabEditarPerfil);
+        fabEditarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent goToEdit = new Intent(getContext(), EditarPerfil.class);
                 startActivity(goToEdit);
+            }
+        });
+
+        //Botón Cerrar Sesión
+        com.getbase.floatingactionbutton.FloatingActionButton fabCerrarSesion = activity.findViewById(R.id.fabCerrarSesion);
+        fabCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
