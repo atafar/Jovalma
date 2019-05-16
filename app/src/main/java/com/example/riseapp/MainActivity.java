@@ -283,11 +283,14 @@ public class MainActivity extends AppCompatActivity {
 
         //ACABA SELECCION IDIOMA INICIAL
     }
-    /**@Override
+    @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        Intent goMenu = new Intent(getBaseContext(), Menu.class);
-        startActivity(goMenu);
-    }**/
+        if(currentUser!=null){
+            Intent goMenu = new Intent(getBaseContext(), Menu.class);
+            startActivity(goMenu);
+        }
+
+    }
 }
