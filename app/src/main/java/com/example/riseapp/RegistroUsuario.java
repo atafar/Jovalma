@@ -231,7 +231,7 @@ public class RegistroUsuario extends AppCompatActivity {
         AppPreferences.getEditor().commit();
 
         //New Spinner
-        strings = getResources().getStringArray(R.array.genders);
+        strings = context.getResources().getStringArray(R.array.genders);
         items = new ArrayList<>(Arrays.asList(strings));
         adapter = new ArrayAdapter<>(this, R.layout.spinner, items);
 
