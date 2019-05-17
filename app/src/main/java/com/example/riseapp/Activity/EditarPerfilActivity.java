@@ -1,9 +1,11 @@
-package com.example.riseapp;
+package com.example.riseapp.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class EditarPerfil extends AppCompatActivity {
+import com.example.riseapp.R;
+
+public class EditarPerfilActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

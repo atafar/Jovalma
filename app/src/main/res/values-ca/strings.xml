@@ -30,4 +30,11 @@
         <item>Home</item>
         <item>Dona</item>
     </string-array>
+    <string name="fecha_de_nacimiento">Data de naixement:</string>
+    <string name="forum">Fòrum</string>
+    <string name="g_nero">Génere:</string>
+    <string name="quisom">Quí som?</string>
+    <string name="ciudad">Ciutat:</string>
+    <string name="Correu">Correu:</string>
+    <string name="guardar">Desar</string>
 </resources>

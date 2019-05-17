@@ -19,44 +19,44 @@
             android:src="@drawable/account_default" />
 
         <TextView
-            android:id="@+id/nombreUsuario"
+            android:id="@+id/txtNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Nombre y apellidos"
+            android:text=""
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="70dp"
-            android:text="Email: " />
+            android:text="@string/Correu" />
 
         <TextView
-            android:id="@+id/fechaNacimiento"
+            android:id="@+id/txtFechaNacimiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
-            android:text="Fecha de nacimiento: " />
+            android:text="@string/fecha_de_nacimiento" />
 
         <TextView
-            android:id="@+id/genero"
+            android:id="@+id/txtGenero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
-            android:text="Género: " />
+            android:text="@string/g_nero" />
 
         <TextView
-            android:id="@+id/ciudad"
+            android:id="@+id/txtCiudad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
-            android:text="Ciudad: " />
+            android:text="@string/ciudad" />
 
 
     </LinearLayout>

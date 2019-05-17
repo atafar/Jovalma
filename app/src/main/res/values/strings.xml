@@ -27,6 +27,10 @@
     <string name="forum">Fòrum</string>
     <string name="quisom">Quí som?</string>
     <string name="guardar">Desar</string>
+    <string name="fecha_de_nacimiento">Data de naixement:</string>
+    <string name="Correu">Correu:</string>
+    <string name="g_nero">Génere:</string>
+    <string name="ciudad">Ciutat:</string>
     <string-array name="genders">
         <item>Escolleix un</item>
         <item>Home</item>

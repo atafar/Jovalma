@@ -30,5 +30,12 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <string name="fecha_de_nacimiento">Date of birth:</string>
+    <string name="forum">Forum</string>
+    <string name="g_nero">Gender:</string>
+    <string name="quisom">Who are we?</string>
+    <string name="ciudad">City:</string>
+    <string name="Correu">Email:</string>
+    <string name="guardar">Save</string>
 
 </resources>

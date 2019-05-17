@@ -1,4 +1,4 @@
-package com.example.riseapp;
+package com.example.riseapp.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
+import com.example.riseapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,7 +30,7 @@ import java.util.Locale;
 import java.util.Objects;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private ImageView appIcon;
     private ImageButton btnEnglish, btnSpanish, btnCatalan;
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        Log.d(MainActivity.class.getSimpleName(), Boolean.toString(FirebaseApp.initializeApp(this).isDefaultApp()));
+//        Log.d(LoginActivity.class.getSimpleName(), Boolean.toString(FirebaseApp.initializeApp(this).isDefaultApp()));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -143,30 +145,34 @@ public class MainActivity extends AppCompatActivity {
         try {
             String userText = etUsuari.getText().toString();
             String passText = etPassword.getText().toString();
-            mAuth.signInWithEmailAndPassword(userText, passText).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Log.d("MISSATGE", "signInWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                Intent goMenu = new Intent(getBaseContext(), Menu.class);
-                                startActivity(goMenu);
-                                finish();
-                            } else {
-                                Log.w("ErrorLogin", "signInWithEmail:failure", task.getException());
-
-                                Toast.makeText(getBaseContext(), getResources().getString(R.string.loginIncorrecto), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-            );
+            Login(userText, passText);
         } catch (IllegalArgumentException ex) {
             Toast.makeText(this, getResources().getText(R.string.emptyStringsError), Toast.LENGTH_SHORT).show();
         }
     }
 
+    private void Login(String userText, String passText) {
+        mAuth.signInWithEmailAndPassword(userText, passText).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("MISSATGE", "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent goMenu = new Intent(getBaseContext(), MenuActivity.class);
+                            startActivity(goMenu);
+                            finish();
+                        } else {
+                            Log.w("ErrorLogin", "signInWithEmail:failure", task.getException());
+
+                            Toast.makeText(getBaseContext(), getResources().getString(R.string.loginIncorrecto), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+        );
+    }
+
     public void btnRegistro(View v) {
-        Intent intent = new Intent(this, RegistroUsuario.class);
+        Intent intent = new Intent(this, RegistroActivity.class);
         startActivityForResult(intent, 1);
     }
 
@@ -175,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-                Intent goMenu = new Intent(getBaseContext(), Menu.class);
+                Intent goMenu = new Intent(getBaseContext(), MenuActivity.class);
                 startActivity(goMenu);
             }
         }
@@ -222,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
         spinLanguage(btnCatalan);
     }
     public void spinLanguage(final ImageButton langButton) {
-        langButton.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.rotate_lang_button));
+        langButton.startAnimation(AnimationUtils.loadAnimation(LoginActivity.this, R.anim.rotate_lang_button));
     }
     private void updateView(String lang) {
         Context context = LocaleHelper.setLocale(this, lang);
@@ -289,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser!=null){
-            Intent goMenu = new Intent(getBaseContext(), Menu.class);
+            Intent goMenu = new Intent(getBaseContext(), MenuActivity.class);
             startActivity(goMenu);
         }
 

@@ -1,15 +1,16 @@
-package com.example.riseapp;
+package com.example.riseapp.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
 
-public class Menu extends AppCompatActivity {
+import com.example.riseapp.Fragments.ProfileFragment;
+import com.example.riseapp.R;
+
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class Menu extends AppCompatActivity {
 //    }
 //
 //    public void sortir(View view){
-//        Intent tancar = new Intent(this, MainActivity.class);
+//        Intent tancar = new Intent(this, LoginActivity.class);
 //        startActivity(tancar);
 //    }
 

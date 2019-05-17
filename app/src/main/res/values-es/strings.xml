@@ -22,7 +22,7 @@
     <string name="user_weakpass_error">La contraseña es demasiado corta</string>
     <string name="username">Nombre de usuario</string>
     <string name="password">Contraseña</string>
-    <string name="email">Correu</string>
+    <string name="email">Correo</string>
     <string name="no_tens_un_compte_registra_t">No tienes cuenta? Registrate</string>
     <string name="accepto_els_termes_i_condicions">Acepto los términos y condiciones</string>
     <string-array name="genders">
@@ -30,4 +30,11 @@
         <item>Hombre</item>
         <item>Mujer</item>
     </string-array>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento:</string>
+    <string name="forum">Foro</string>
+    <string name="g_nero">Género:</string>
+    <string name="quisom">¿Quién somos?</string>
+    <string name="ciudad">Ciudad:</string>
+    <string name="Correu">Correo:</string>
+    <string name="guardar">Guardar</string>
 </resources>
