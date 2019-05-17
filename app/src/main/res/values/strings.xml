@@ -36,4 +36,5 @@
         <item>Home</item>
         <item>Dona</item>
     </string-array>
+    <string name="title_activity_mapa_prueba">Map</string>
 </resources>

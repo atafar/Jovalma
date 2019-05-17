@@ -1,11 +1,13 @@
-package com.example.riseapp.Activity;
+package com.example.riseapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.riseapp.Fragments.ProfileFragment;
 import com.example.riseapp.R;
@@ -18,11 +20,11 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.menu);
 
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
-//        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new ProfileFragment()).commit();
+                new InformatFragment()).commit();
     }
 }
 
@@ -47,11 +49,19 @@ public class MenuActivity extends AppCompatActivity {
                         case R.id.navigation_perfil:
                             selectedFragment = new ProfileFragment();
                             break;
-//                        case R.id.navigation_mapa:
-//                            selectedFragment = new Fragmente();
-//                            break;
-//                        case R.id.navigation_info:
-//                            selectedFragment = new Fragment();
+
+                        case R.id.navigation_mapa:
+                            selectedFragment = new ContactaFragment();
+                            break;
+
+                        case R.id.navigation_info:
+                            selectedFragment = new InformatFragment();
+
+                        case R.id.navigation_empresa:
+                            selectedFragment = new JovalmaFragment();
+
+                        case R.id.navigation_forum:
+                            selectedFragment = new ForoFragment();
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
