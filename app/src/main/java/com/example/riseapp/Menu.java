@@ -17,23 +17,13 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.menu);
 
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
-//        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new ProfileFragment()).commit();
+                new InformatFragment()).commit();
     }
 }
-
-//    public void canviarIdioma(View view){
-//        Intent change = new Intent(this, Idioma.class);
-//        startActivity(change);
-//    }
-//
-//    public void sortir(View view){
-//        Intent tancar = new Intent(this, MainActivity.class);
-//        startActivity(tancar);
-//    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,11 +36,19 @@ public class Menu extends AppCompatActivity {
                         case R.id.navigation_perfil:
                             selectedFragment = new ProfileFragment();
                             break;
-//                        case R.id.navigation_mapa:
-//                            selectedFragment = new Fragmente();
-//                            break;
-//                        case R.id.navigation_info:
-//                            selectedFragment = new Fragment();
+
+                        case R.id.navigation_mapa:
+                            selectedFragment = new ContactaFragment();
+                            break;
+
+                        case R.id.navigation_info:
+                            selectedFragment = new InformatFragment();
+
+                        case R.id.navigation_empresa:
+                            selectedFragment = new JovalmaFragment();
+
+                        case R.id.navigation_forum:
+                            selectedFragment = new ForoFragment();
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
