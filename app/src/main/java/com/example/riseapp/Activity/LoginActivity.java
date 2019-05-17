@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
+import com.example.riseapp.MenuActivity;
 import com.example.riseapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

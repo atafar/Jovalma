@@ -15,9 +15,9 @@
         <activity android:name=".Activity.EditarPerfilActivity"></activity>
         <activity android:name=".Activity.RegistroActivity" />
         <activity android:name=".Activity.LoginActivity">
-        <activity android:name=".ForoFragment"></activity>
-        <activity android:name=".JovalmaFragment" />
-        <activity android:name=".InformatFragment" />
+        <activity android:name=".Fragments.ForoFragment"></activity>
+        <activity android:name=".Fragments.JovalmaFragment" />
+        <activity android:name=".Fragments.InformatFragment" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

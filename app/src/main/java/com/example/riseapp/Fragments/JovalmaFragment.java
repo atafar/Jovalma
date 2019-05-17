@@ -1,15 +1,16 @@
-package com.example.riseapp;
+package com.example.riseapp.Fragments;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.gms.maps.GoogleMap;
+
+import com.example.riseapp.R;
 
 
-public class InformatFragment extends Fragment {
+public class JovalmaFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
