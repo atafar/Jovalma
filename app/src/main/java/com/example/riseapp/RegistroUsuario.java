@@ -175,11 +175,12 @@ public class RegistroUsuario extends AppCompatActivity {
             String pass = etPass.getText().toString();
             String passRepe = etPassRepe.getText().toString();
 
-            if(pass.equals(passRepe)){
+            if(pass.equals(passRepe) && camposLlenos()){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+
                             setResult(RESULT_OK);
                             finish();
                         } else{
@@ -196,14 +197,29 @@ public class RegistroUsuario extends AppCompatActivity {
                     }
                 });
             }
-            else{
+            else if(!pass.equals(passRepe)){
                 Toast.makeText(this, R.string.notEqualPassReg, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, R.string.emptyStringsError, Toast.LENGTH_SHORT).show();
             }
         }catch(IllegalArgumentException ex){
             Toast.makeText(this, R.string.emptyStringsError, Toast.LENGTH_SHORT).show();
         }
     }
 
+    private boolean camposLlenos() {
+        if(isEmpty(etEmail)||isEmpty(etPass)||isEmpty(etPassRepe)||isEmpty(etCity)||
+                isEmpty(etDateView)||isEmpty(etName)|| (spinnerGender.getSelectedItemPosition() == 0)||!checkBoxConditions.isChecked()){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    private boolean isEmpty(EditText editText) {
+        return (editText.getText().toString().trim().length() == 0);
+    }
     public void btnCancel(View v){
         setResult(RESULT_CANCELED);
         finish();

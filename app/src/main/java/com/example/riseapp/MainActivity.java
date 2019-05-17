@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Intent goMenu = new Intent(getBaseContext(), Menu.class);
                                 startActivity(goMenu);
+                                finish();
                             } else {
                                 Log.w("ErrorLogin", "signInWithEmail:failure", task.getException());
 
