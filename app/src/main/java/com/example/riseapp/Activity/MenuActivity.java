@@ -1,4 +1,4 @@
-package com.example.riseapp;
+package com.example.riseapp.Activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Fragments.InformatFragment;
 import com.example.riseapp.Fragments.JovalmaFragment;
 import com.example.riseapp.Fragments.ProfileFragment;
+import com.example.riseapp.R;
 
 public class MenuActivity extends AppCompatActivity {
 

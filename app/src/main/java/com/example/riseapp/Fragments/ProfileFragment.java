@@ -79,11 +79,14 @@ public class ProfileFragment extends Fragment {
         }catch (Exception e){
             txtNombreUsuario.setText(e.getMessage());
         }
-        txtNombreUsuario.setText(Constants.getCurrentUser().getName());
-        txtEmail.setText(getResources().getString(R.string.Correu)+"                    "+Constants.getCurrentUser().getEmail());
-        txtCiudad.setText(getResources().getString(R.string.ciudad)+"                   "+Constants.getCurrentUser().getCity());
-        txtFechaNacimiento.setText(getResources().getString(R.string.fecha_de_nacimiento)+"                  "+Constants.getCurrentUser().getDate());
-        txtGenero.setText(getResources().getString(R.string.g_nero)+"                 "+Constants.getCurrentUser().getGender());
+       if(Constants.getCurrentUser()!= null){
+           txtNombreUsuario.setText(Constants.getCurrentUser().getName());
+           txtEmail.setText(getResources().getString(R.string.Correu)+"                    "+Constants.getCurrentUser().getEmail());
+           txtCiudad.setText(getResources().getString(R.string.ciudad)+"                   "+Constants.getCurrentUser().getCity());
+           txtFechaNacimiento.setText(getResources().getString(R.string.fecha_de_nacimiento)+"                  "+Constants.getCurrentUser().getDate());
+           txtGenero.setText(getResources().getString(R.string.g_nero)+"                 "+Constants.getCurrentUser().getGender());
+       }
+
 
 
         return activity;

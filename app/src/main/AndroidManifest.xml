@@ -12,12 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.EditarPerfilActivity"></activity>
-        <activity android:name=".Activity.RegistroActivity" />
-        <activity android:name=".Activity.LoginActivity">
-        <activity android:name=".Fragments.ForoFragment"></activity>
-        <activity android:name=".Fragments.JovalmaFragment" />
-        <activity android:name=".Fragments.InformatFragment" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,16 +25,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".EditarPerfil" />
-        <activity android:name=".RegistroUsuario" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.EditarPerfilActivity" />
+        <activity android:name=".Activity.RegistroActivity" />
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu" />
+        <activity android:name=".Activity.MenuActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
