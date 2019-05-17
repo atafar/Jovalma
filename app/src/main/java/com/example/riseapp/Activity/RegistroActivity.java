@@ -192,12 +192,10 @@ public class RegistroActivity extends AppCompatActivity {
 
                             //CREACION USUARIO+SUBIR DATOS BDDD
                              userRef = Constants.getFirebaseFirestore().collection("users").document(Constants.getFirebaseAuth().getCurrentUser().getUid());
-
-
-
                             Calendar c = Calendar.getInstance();
                             String registerDate = DateFormat.format("dd-MM-yyyy", c).toString();
                             User user = new User(etEmail.getText().toString(), etName.getText().toString(), spinnerGender.getSelectedItem().toString(), etCity.getText().toString(), etDateView.getText().toString(), registerDate);
+                            Constants.setCurrentUser(user);
                             userRef.set(user);
 
                              setResult(RESULT_OK);

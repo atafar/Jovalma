@@ -19,6 +19,7 @@ public  class Constants {
     private static FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private static FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
     private  static FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+    private static  User currentUser;
 
 
     public static FirebaseFirestore getFirebaseFirestore() {
@@ -34,7 +35,13 @@ public  class Constants {
         return firebaseAuth;
     }
 
+    public static User getCurrentUser() {
+        return currentUser;
+    }
 
+    public static void setCurrentUser(User currentUser) {
+        Constants.currentUser = currentUser;
+    }
 
     public static void UploadFile(Uri uri, String path, String fileName, String extension) {
         Constants.getFirebaseStorage().getReference().child("users/" + getFirebaseAuth().getCurrentUser().getUid() + path + fileName + extension).putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
