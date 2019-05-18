@@ -30,16 +30,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 }
 
-//    public void canviarIdioma(View view){
-//        Intent change = new Intent(this, Idioma.class);
-//        startActivity(change);
-//    }
-//
-//    public void sortir(View view){
-//        Intent tancar = new Intent(this, LoginActivity.class);
-//        startActivity(tancar);
-//    }
-
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override

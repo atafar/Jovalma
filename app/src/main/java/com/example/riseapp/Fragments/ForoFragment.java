@@ -15,7 +15,7 @@ public class ForoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View activity = inflater.inflate(R.layout.informat_fragment, container, false);
+        final View activity = inflater.inflate(R.layout.foro_fragment, container, false);
 
         return activity;
     }

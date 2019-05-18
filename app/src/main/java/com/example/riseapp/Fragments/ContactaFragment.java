@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.example.riseapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -19,36 +20,37 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
     public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
-        private GoogleMap mMap;
+        GoogleMap map;
+
+        public ContactaFragment(){
+
+        }
 
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            final View activity = inflater.inflate(R.layout.mapa_fragment, container, false);
-//            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                    .findFragmentById(R.id.map);
-//            mapFragment.getMapAsync(this);
+            View activity = inflater.inflate(R.layout.mapa_fragment, container, false);
 
             return activity;
         }
 
+        public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
+            super.onViewCreated(view, savedInstanceState);
+            SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        }
 
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
-         * we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to install
-         * it inside the SupportMapFragment. This method will only be triggered once the user has
-         * installed Google Play services and returned to the app.
-         */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            mMap = googleMap;
+            map = googleMap;
 
-            // Add a marker in Sydney and move the camera
-            LatLng sydney = new LatLng(-34, 151);
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng pp = new LatLng(41.5666700, 2.0166700);
+
+            MarkerOptions option = new MarkerOptions();
+            option.position(pp);
+            map.setMinZoomPreference(13.0f);
+            map.moveCamera(CameraUpdateFactory.newLatLng(pp));
+
+
         }
 
     }
