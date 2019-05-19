@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtClose_city"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_margin="4dp"
+        android:background="@drawable/cicrculo_close"
+        android:gravity="center"
+        android:text="X"
+        android:textColor="@color/backgroundBar"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/change_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:gravity="center"
+        android:text="@string/nova_ciutat"
+        android:textSize="20sp" />
+
+
+    <AutoCompleteTextView
+        android:id="@+id/newCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+
+        android:drawablePadding="10dp"
+        android:hint="@string/nova_ciutat_minus"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_empty_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/emptyStringsError"
+        android:textColor="@color/colorPrimaryDark"
+        android:visibility="gone"
+        tools:ignore="KeyboardInaccessibleWidget" />
+
+    <Button
+        android:id="@+id/btn_save_city"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/aspecto_boton_azul"
+        android:text="@string/guardar"
+         />
+
+</LinearLayout>

@@ -14,25 +14,38 @@
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
             android:src="@drawable/account_default" />
+    <AutoCompleteTextView
+        android:id="@+id/et_registro_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:focusable="false"
 
-    <EditText
-        android:id="@+id/nomicognoms"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        />
+    <AutoCompleteTextView
+        android:id="@+id/et_nom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="50dp"
+        android:focusable="false"
         android:autofillHints=""
         android:ems="10"
-        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:drawableStart="@drawable/ic_person_black_24dp"
         android:hint="@string/nom_usuario"
         android:inputType="textEmailAddress"
         android:textAlignment="viewStart"
         />
 
-    <EditText
-        android:id="@+id/password"
+    <AutoCompleteTextView
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
@@ -41,6 +54,7 @@
         android:autofillHints=""
         android:drawableStart="@drawable/ic_lock_black_24dp"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/password"
         android:inputType="textPassword"
         />
@@ -83,7 +97,7 @@
             tools:ignore="KeyboardInaccessibleWidget" />
     </LinearLayout>
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/et_registro_ciudad"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -91,29 +105,24 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/ciutat"
         />
 
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
 
     <Button
-        android:id="@+id/bt_aceptaRegistoUser"
-        android:layout_width="325dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/btnDesar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/aspecto_boton_azul"
-        android:onClick="btnAcepta"
         android:text="@string/guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        />
 
-</android.support.constraint.ConstraintLayout>
 
 
 

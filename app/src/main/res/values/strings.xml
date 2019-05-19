@@ -37,4 +37,18 @@
         <item>Dona</item>
     </string-array>
     <string name="title_activity_mapa_prueba">Map</string>
+    <string name="nova_ciutat">NOVA CIUTAT</string>
+    <string name="fes_te_una_foto">Fes-te una foto</string>
+    <string name="des_de_la_galeria">Des de la galeria</string>
+    <string name="nou_nom">NOU NOM</string>
+    <string name="nova_contrasenya">NOVA CONTRASENYA</string>
+    <string name="contrasenya_vella">Contrasenya vella</string>
+    <string name="nova_contrasenya_minus">Nova contrasenya</string>
+    <string name="nova_ciutat_minus">Nova ciutat</string>
+    <string name="correu_electr_nic">CORREU ELECTRÒNIC</string>
+    <string name="nou_email">Nou email</string>
+    <string name="actualitzar_contra">S\'ha actualitzat la contrasenya</string>
+    <string name="contra_incorrecta">Contrasenya errònia</string>
+    <string name="ciutat_update">Ciutat actualitzada correctament</string>
+    <string name="city_noupdate">No s\'ha pogut actualitzar la ciutat</string>
 </resources>

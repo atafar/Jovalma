@@ -40,7 +40,9 @@ import com.google.firebase.firestore.DocumentReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -136,7 +138,7 @@ public class RegistroActivity extends AppCompatActivity {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        etDateView.setText(day + "/" + month + "/" + year);
+                        etDateView.setText(day + "/" + (month+1) + "/" + year);
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setFirstDayOfWeek(Calendar.MONDAY);
@@ -197,6 +199,9 @@ public class RegistroActivity extends AppCompatActivity {
                             User user = new User(etEmail.getText().toString(), etName.getText().toString(), spinnerGender.getSelectedItem().toString(), etCity.getText().toString(), etDateView.getText().toString(), registerDate);
                             Constants.setCurrentUser(user);
                             userRef.set(user);
+                            Map<String, Object> constants = new HashMap<>();
+                            constants.put("hasProfilePicture", false);
+                            userRef.collection("data").document("constants").set(constants);
 
                              setResult(RESULT_OK);
                             finish();
