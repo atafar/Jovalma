@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+    android:layout_width="300dp"
     android:layout_height="200dp"
-    android:layout_marginBottom="10dp"
-    android:background="@drawable/background_round">
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@drawable/background_round">
 
         <TextView
-            android:id="@+id/txt_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
+            android:id="@+id/txtNombreContacto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textAlignment="center"
-            android:textSize="30sp"
-            tools:layout_editor_absoluteY="32dp"
-            tools:text="DIA 14" />
+            android:textSize="30sp"/>
 
     </LinearLayout>
 
-
-<!--Meter el resto aqui-->
 
 </android.support.constraint.ConstraintLayout>

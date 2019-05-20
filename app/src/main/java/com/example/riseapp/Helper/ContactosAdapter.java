@@ -12,13 +12,13 @@ import com.example.riseapp.R;
 
 import java.util.LinkedList;
 
-public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ViewHolder>{
-    private final LinkedList<Integer> mDayList;
+public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.ViewHolder>{
+    private final LinkedList<Integer> mContactos;
     private LayoutInflater mInflater;
 
-    public DayListAdapter(Context context, LinkedList<Integer> dayList){
+    public ContactosAdapter(Context context, LinkedList<Integer> contactos){
         mInflater = LayoutInflater.from(context);
-        mDayList = dayList;
+        mContactos = contactos;
     }
     @NonNull
     @Override
@@ -38,21 +38,21 @@ public class DayListAdapter extends RecyclerView.Adapter<DayListAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        int mCurrent = mDayList.get(position);
-        holder.dayListItemView.setText("Contacto "+Integer.toString(mCurrent));
+        int mCurrent = mContactos.get(position);
+        holder.contactosItemView.setText("Contacto "+Integer.toString(mCurrent));
     }
 
     @Override
     public int getItemCount() {
-        return mDayList.size();
+        return mContactos.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        public final TextView dayListItemView;
-        final DayListAdapter mAdapter;
-        public ViewHolder(View itemView, DayListAdapter adapter) {
+        public final TextView contactosItemView;
+        final ContactosAdapter mAdapter;
+        public ViewHolder(View itemView, ContactosAdapter adapter) {
             super(itemView);
-            dayListItemView = itemView.findViewById(R.id.txt_day);
+            contactosItemView = itemView.findViewById(R.id.txtNombreContacto);
             mAdapter = adapter;
         }
     }
