@@ -18,7 +18,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.riseapp.Activity.EditarPerfilActivity;
 import com.example.riseapp.Activity.LoginActivity;
 import com.example.riseapp.Constants;
-import com.example.riseapp.GlideApp;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -133,7 +132,7 @@ public class ProfileFragment extends Fragment {
                     }else{
                         Log.i("Profile Image", " The user doesn't have a profile image");
 
-                        GlideApp.with(activity.getContext()).load(activity.getContext().getDrawable(R.drawable.account_default)).into(imgProfile);
+                        Glide.with(activity.getContext()).load(activity.getContext().getDrawable(R.drawable.account_default)).into(imgProfile);
                     }
                 }
             });

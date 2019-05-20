@@ -1,10 +1,13 @@
 package com.example.riseapp.Activity;
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import  android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
 import com.example.riseapp.Fragments.ContactaFragment;
@@ -15,7 +18,7 @@ import com.example.riseapp.Fragments.ProfileFragment;
 import com.example.riseapp.R;
 
 public class MenuActivity extends AppCompatActivity {
-
+private Fragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +28,10 @@ public class MenuActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new InformatFragment()).commit();
+           fragment =  new InformatFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
     }
+
 }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -35,30 +39,34 @@ public class MenuActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                    Fragment selectedFragment = null;
+
 
                     switch (item.getItemId()) {
                         case R.id.navigation_perfil:
-                            selectedFragment = new ProfileFragment();
+                            fragment = new ProfileFragment();
                             break;
 
                         case R.id.navigation_mapa:
-                            selectedFragment = new ContactaFragment();
+                            fragment = new ContactaFragment();
                             break;
 
                         case R.id.navigation_info:
-                            selectedFragment = new InformatFragment();
+                            fragment = new InformatFragment();
 
                         case R.id.navigation_empresa:
-                            selectedFragment = new JovalmaFragment();
+                            fragment = new JovalmaFragment();
 
                         case R.id.navigation_forum:
-                            selectedFragment = new ForoFragment();
+                            fragment = new ForoFragment();
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
+                    if (fragment != null) {
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction transaction = fragmentManager.beginTransaction();
+                        transaction.replace(R.id.fragment_container, fragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                    }
                     return true;
                 }
             };
