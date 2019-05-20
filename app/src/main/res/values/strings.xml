@@ -51,8 +51,17 @@
     <string name="contra_incorrecta">Contrasenya errònia</string>
     <string name="ciutat_update">Ciutat actualitzada correctament</string>
     <string name="city_noupdate">No s\'ha pogut actualitzar la ciutat</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="canviar_fto_perfil">Canviar foto de perfil</string>
+    <string name="nom_actualitzat">Nom actualitzat</string>
+    <string name="noPassUpdate">No s\'ha pogut actualitzar la contrasenya</string>
+    <string name="les_meves_dietes">Les meves dietes</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="tancar_sessio">Tancar sessió</string>
+    <string name="genere_actualitzat">Gènere actualitzat</string>
+    <string name="genere_noActualitzat">Gènere no actualitzat</string>
+    <string name="data_actualitzada">Data actualitzada</string>
+    <string name="error_actualitzardata">Error al actualitzar la data</string>
+    <string name="torna_al_perfil">Torna enrere</string>
+    <string name="correu_actualitzat">Correu actualitzat</string>
+    <string name="no_actualitzatCorreu">Correu no actualitzat</string>
 </resources>

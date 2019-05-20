@@ -1,5 +1,6 @@
 package com.example.riseapp.Fragments;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.riseapp.Helper.ContactosAdapter;
+import com.example.riseapp.AppPreferences;
+import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -36,6 +39,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View activity = inflater.inflate(R.layout.mapa_fragment, container, false);
+            LocaleHelper.setLocale(activity.getContext(), AppPreferences.getSettings().getString("lang","es"));
 
             int contactos = 10;
 

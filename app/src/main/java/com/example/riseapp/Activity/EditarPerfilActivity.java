@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,6 +33,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Constants;
+import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,15 +57,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static android.support.constraint.Constraints.TAG;
 
 public class EditarPerfilActivity extends AppCompatActivity {
-    private EditText etEmail, etPass,etDateView, etName,etCity;
+    private EditText etEmail, etPass,etDateView;
+    private  TextView etName, etCity,txtCambiarFoto;
     private ImageView imgProfile;
     private Spinner spinnerGender;
     public static final int GET_FROM_GALLERY = 3;
     public static final int REQUEST_IMAGE_CAPTURE = 1;
+    private Button btnTornaPerfil;
     //Spinner
     private String[] strings;
     private List<String> items;
@@ -73,25 +79,46 @@ public class EditarPerfilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LocaleHelper.setLocale(getApplicationContext(), AppPreferences.getSettings().getString("lang","es"));
         setContentView(R.layout.activity_editar_perfil);
         etEmail = findViewById(R.id.et_registro_email);
         etPass = findViewById(R.id.et_password);
+        txtCambiarFoto=findViewById(R.id.tv_cambiarFoto);
         etDateView = findViewById(R.id.et_dateOfBirth);
-        etName=findViewById(R.id.et_nom);
-        etCity=findViewById(R.id.et_registro_ciudad);
+        etName=findViewById(R.id.tv_Nombre);
+        etCity=findViewById(R.id.tv_ciudad);
         imgProfile=findViewById(R.id.avatar);
         myDialog = new Dialog(this);
         etEmail.setInputType(0);
         etName.setInputType(0);
-        etCity.setInputType(0);
+//        etCity.setInputType(0);
         etPass.setInputType(0);
-
+        btnTornaPerfil=findViewById(R.id.btnTornarPerfil);
         User user=Constants.getCurrentUser();
         etEmail.setText(user.getEmail().toString());
         etName.setText(user.getName().toString());
         etCity.setText(user.getCity().toString());
         etPass.setText("**********");
         etDateView.setText(user.getDate().toString());
+
+        btnTornaPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                Constants.getCurrentUser().setGender( spinnerGender.getSelectedItem().toString());
+                Constants.getFirebaseFirestore().collection("users").document(Objects.requireNonNull(Constants.getFirebaseAuth().getCurrentUser()).getUid()).set(Constants.getCurrentUser()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+
+                        } else {
+
+                        }
+                    }
+                });
+                finish();
+            }
+        });
 
         if(Constants.getCurrentUserProfileImage()!=null){
             Glide.with(getApplicationContext()).load(Constants.getCurrentUserProfileImage())
@@ -105,7 +132,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
             }
         });
-        imgProfile.setOnClickListener(new View.OnClickListener() {
+        txtCambiarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showPopUp_img();
@@ -114,7 +141,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         etName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showPopUp_name();
             }
         });
         etCity.setOnClickListener(new View.OnClickListener() {
@@ -129,10 +156,17 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 showPopUp_pass();
             }
         });
+        etEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopUp_email();
+            }
+        });
 
 
         //EMPIEZA SPINNER
-        spinnerGender = findViewById(R.id.sp_gender_spinner);
+        spinnerGender = (Spinner) findViewById(R.id.sp_gender_spinner);
+
         strings = getResources().getStringArray(R.array.genders);
         items = new ArrayList<>(Arrays.asList(strings));
         adapter = new ArrayAdapter<>(this, R.layout.spinner, items);
@@ -182,6 +216,18 @@ public class EditarPerfilActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         etDateView.setText(day + "/" + (month+1) + "/" + year);
+                        Constants.getCurrentUser().setDate(day + "/" + (month+1) + "/" + year);
+                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                        Constants.getFirebaseFirestore().collection("users").document(Objects.requireNonNull(auth.getCurrentUser()).getUid()).set(Constants.getCurrentUser()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    displayToast(getString(R.string.data_actualitzada));
+                                } else {
+                                    displayToast(getString(R.string.error_actualitzardata));
+                                }
+                            }
+                        });
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setFirstDayOfWeek(Calendar.MONDAY);
@@ -196,6 +242,157 @@ public class EditarPerfilActivity extends AppCompatActivity {
         // ACABA CALENDARIO DATE PICKER
 
 
+
+    }
+
+    private void showPopUp_email() {
+        final TextView txtClose, tv_wrong_email, tv_empty_email;
+        Button save;
+        final AutoCompleteTextView newEmail;
+
+        myDialog.setContentView(R.layout.popup_email);
+        save = myDialog.findViewById(R.id.btn_save_email);
+
+        tv_empty_email = myDialog.findViewById(R.id.tv_empty);
+        tv_wrong_email= myDialog.findViewById(R.id.tv_wrong_email);
+        newEmail = myDialog.findViewById(R.id.newEmail);
+        txtClose = myDialog.findViewById(R.id.txtClose_email);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (email_isValidated( tv_empty_email,tv_wrong_email, newEmail)) {
+                    final String nEmail = newEmail.getText().toString();
+
+                    // Get auth credentials from the user for re-authentication
+                    AuthCredential credential = EmailAuthProvider
+                            .getCredential(Constants.getCurrentUser().getEmail(),AppPreferences.getSettings().getString("pass","null")); // Current Login Credentials \\
+                    // Prompt the user to re-provide their sign-in credentials
+                    Constants.getFirebaseAuth().getCurrentUser().reauthenticate(credential)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Constraints", "re-auth");
+                                    Constants.getFirebaseAuth().getCurrentUser().updateEmail(nEmail)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d(TAG, "User email address updated.");
+                                                        Constants.getCurrentUser().setEmail(newEmail.getText().toString());
+                                                    }
+                                                }
+                                            });
+                                }
+                            });
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    Constants.getFirebaseFirestore().collection("users").document(Objects.requireNonNull(auth.getCurrentUser()).getUid()).set(Constants.getCurrentUser()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                etEmail.setText(nEmail);
+                                myDialog.dismiss();
+                                displayToast(getString(R.string.correu_actualitzat));
+                            } else {
+
+                                displayToast(getString(R.string.no_actualitzatCorreu));
+                            }
+                        }
+                    });
+
+
+
+
+
+
+
+                }
+            }
+        });
+
+        Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
+    private boolean email_isValidated(TextView tv_empty_email, TextView tv_wrong_email, AutoCompleteTextView newEmail) {
+        if(isEmpty(newEmail)){
+            tv_empty_email.setVisibility(View.VISIBLE);
+            return false;
+        }else{
+            if(!isEmailValid(newEmail.getText().toString())){
+                tv_empty_email.setVisibility(View.INVISIBLE);
+                tv_wrong_email.setVisibility(View.VISIBLE);
+                return false;
+            }
+            else{
+                tv_empty_email.setVisibility(View.GONE);
+                tv_wrong_email.setVisibility(View.GONE);
+
+                return true;
+            }
+        }
+    }
+
+    public static boolean isEmailValid(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    public void showPopUp_name() {
+        final TextView txtClose, tv_wrong_name, tv_empty_name;
+        Button save;
+        final AutoCompleteTextView newName;
+
+        myDialog.setContentView(R.layout.popup_name);
+        save = myDialog.findViewById(R.id.btn_save_name);
+
+        tv_empty_name = myDialog.findViewById(R.id.tv_empty_name);
+        newName = myDialog.findViewById(R.id.newName);
+        txtClose = myDialog.findViewById(R.id.txtClose_name);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (name_isValidated( tv_empty_name, newName)) {
+                    final String oldName = Constants.getCurrentUser().getName();
+                    Constants.getCurrentUser().setName(newName.getText().toString());
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    Constants.getFirebaseFirestore().collection("users").document(Objects.requireNonNull(auth.getCurrentUser()).getUid()).set(Constants.getCurrentUser()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+
+
+
+
+                                etName.setText(newName.getText().toString());
+                                myDialog.dismiss();
+                                displayToast(getString(R.string.nom_actualitzat));
+                            } else {
+                                Constants.getCurrentUser().setCity(oldName);
+                                displayToast(getString(R.string.noPassUpdate));
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+        Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
 
     }
     public void showPopUp_img() {
@@ -336,6 +533,23 @@ public class EditarPerfilActivity extends AppCompatActivity {
         myDialog.show();
 
     }
+    public boolean name_isValidated( TextView tv_empty_name, EditText newName) {
+        boolean anyChanges = false;
+        if (!name_validateEmpty(tv_empty_name, newName)) {
+            tv_empty_name.setVisibility(View.VISIBLE);
+            return false;
+        }
+        return  true;
+    }
+    public boolean name_validateEmpty(TextView tv_empty_name, EditText newName) {
+        if (isEmpty(newName)) {
+            return false;
+        }
+        tv_empty_name.setVisibility(View.GONE);
+        return true;
+    }
+
+
     public boolean password_isValidated(TextView tv_empty, TextView tv_wrong_password_match, EditText oldPassword, EditText newPassword, EditText repeatNewPassword) {
         boolean anyChanges = false;
 

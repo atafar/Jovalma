@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtClose_city"
+        android:id="@+id/txtClose_email"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="end"
