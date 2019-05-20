@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        Log.d(LoginActivity.class.getSimpleName(), Boolean.toString(FirebaseApp.initializeApp(this).isDefaultApp()));
@@ -73,13 +74,12 @@ public class LoginActivity extends AppCompatActivity {
         tv_tac=findViewById(R.id.tv_tac);
         mAuth = FirebaseAuth.getInstance();
 
+
         //IDIOMA AL INICIO O POR DEFECTO
 
-        AppPreferences.getEditor().putString("lang", Locale.getDefault().getLanguage());
-        AppPreferences.getEditor().commit();
 
 
-        String lang = AppPreferences.getSettings().getString("lang", "null");
+        String lang = AppPreferences.getSettings().getString("lang", Locale.getDefault().getLanguage());
 
         try {
             switch (Objects.requireNonNull(lang)) {
@@ -152,19 +152,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void Login(String userText, String passText) {
+        AppPreferences.getEditor().putString("pass",passText);
+        AppPreferences.getEditor().commit();
         mAuth.signInWithEmailAndPassword(userText, passText).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("MISSATGE", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent goMenu = new Intent(getBaseContext(), MenuActivity.class);
+                            Intent goMenu = new Intent(getApplicationContext(), MenuActivity.class);
                             startActivity(goMenu);
+
+
                             finish();
                         } else {
                             Log.w("ErrorLogin", "signInWithEmail:failure", task.getException());
 
-                            Toast.makeText(getBaseContext(), getResources().getString(R.string.loginIncorrecto), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.loginIncorrecto), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -173,6 +177,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void btnRegistro(View v) {
         Intent intent = new Intent(this, RegistroActivity.class);
+        AppPreferences.getEditor().putString("pass",etPassword.getText().toString());
+        AppPreferences.getEditor().commit();
         startActivityForResult(intent, 1);
     }
 
@@ -294,9 +300,11 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if(currentUser!=null){
-            Intent goMenu = new Intent(getBaseContext(), MenuActivity.class);
+            Intent goMenu = new Intent(getApplicationContext(), MenuActivity.class);
             startActivity(goMenu);
+            finish();
         }
 
     }
