@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Fragments.ContactaFragment;
@@ -21,6 +22,7 @@ import com.example.riseapp.R;
 
 public class MenuActivity extends AppCompatActivity {
 private Fragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +44,7 @@ private Fragment fragment;
            fragment =  new InformatFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
         }
-
-}
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -81,4 +82,14 @@ private Fragment fragment;
                     return true;
                 }
             };
+
+    @Override
+    public void onBackPressed()
+    {
+        if(ForoFragment.browser != null) {
+            if (ForoFragment.browser.canGoBack()) {
+                ForoFragment.browser.goBack();
+            }
+        }
+    }
 }
