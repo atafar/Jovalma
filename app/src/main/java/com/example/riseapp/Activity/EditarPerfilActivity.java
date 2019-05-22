@@ -33,6 +33,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Constants;
+import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
@@ -76,6 +77,13 @@ public class EditarPerfilActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private DatePickerDialog datePickerDialog;
     private Dialog myDialog;
+
+
+    public void onBackPressed()
+    {
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
