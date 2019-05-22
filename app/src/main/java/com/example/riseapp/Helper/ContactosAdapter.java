@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.riseapp.Fragments.ContactaFragment;
 import com.example.riseapp.R;
 
 import java.util.LinkedList;
@@ -28,8 +29,7 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.View
         mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //ACCIÓN A REALIAR
+                ContactaFragment.changeMap();
             }
         });
         return mViewHolder;

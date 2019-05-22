@@ -31,10 +31,14 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
     private final LinkedList<Integer> mContactos = new LinkedList<>();
 
-        GoogleMap map;
+        static GoogleMap map;
 
         public ContactaFragment(){
 
+        }
+
+        public static void changeMap(){
+            map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(42.000, 2.1685)));
         }
 
         @Override
@@ -72,7 +76,6 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
             option.position(pp);
             map.setMinZoomPreference(11.0f);
             map.moveCamera(CameraUpdateFactory.newLatLng(pp));
-
 
         }
 
