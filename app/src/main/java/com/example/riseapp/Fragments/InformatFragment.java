@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Constants;
+import com.example.riseapp.GestionConexion;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
@@ -71,6 +72,11 @@ public class InformatFragment extends Fragment {
                 }
             }
         });
+        //DESCARGAR CONTACTOS
+        GestionConexion con = new GestionConexion();
+        con.setLang(AppPreferences.getSettings().getString("lang","es"));
+        con.start();
+        //con.getContactes();
 
         return activity;
     }

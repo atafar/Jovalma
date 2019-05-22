@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.riseapp.GestionConexion;
 import com.example.riseapp.Helper.ContactosAdapter;
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
