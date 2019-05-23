@@ -13,21 +13,25 @@ public class CONTACTE {
 
     private int TELEFON;
     private String NOM;
-    private String DIRECTORA;
     private String SERVEI;
     private String ADRECA;
     private double LONGITUT;
     private double LATITUT;
+    private String WEB;
+    private String CORREU;
 
-    public CONTACTE(int TELEFON, String NOM, String DIRECTORA, String SERVEI, String ADRECA, double LONGITUT, double LATITUT) {
+    public CONTACTE(int TELEFON, String NOM, String SERVEI, String ADRECA, double LONGITUT, double LATITUT, String WEB, String CORREU) {
         this.TELEFON = TELEFON;
         this.NOM = NOM;
-        this.DIRECTORA = DIRECTORA;
         this.SERVEI = SERVEI;
         this.ADRECA = ADRECA;
         this.LONGITUT = LONGITUT;
         this.LATITUT = LATITUT;
+        this.WEB = WEB;
+        this.CORREU = CORREU;
     }
+
+ 
 
     public int getTELEFON() {
         return TELEFON;
@@ -37,9 +41,15 @@ public class CONTACTE {
         return NOM;
     }
 
-    public String getDIRECTORA() {
-        return DIRECTORA;
+    public String getWEB() {
+        return WEB;
     }
+
+    public String getCORREU() {
+        return CORREU;
+    }
+
+    
 
     public String getSERVEI() {
         return SERVEI;

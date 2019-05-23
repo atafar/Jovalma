@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.webkit.WebView;
 
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Fragments.ContactaFragment;
@@ -64,12 +63,14 @@ private Fragment fragment;
 
                         case R.id.navigation_info:
                             fragment = new InformatFragment();
+                            break;
 
                         case R.id.navigation_empresa:
                             fragment = new JovalmaFragment();
-
+                            break;
                         case R.id.navigation_forum:
                             fragment = new ForoFragment();
+                            break;
                     }
 
                     if (fragment != null) {

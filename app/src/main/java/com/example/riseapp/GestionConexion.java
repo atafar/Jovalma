@@ -64,12 +64,13 @@ public class GestionConexion extends Thread {
         for (int i = 0; i < size; i++) {
             int telefon=dis.readInt();
             String nom=dis.readUTF();
-            String directora=dis.readUTF();
             String servei=dis.readUTF();
             String adreca=dis.readUTF();
             double longitut=dis.readDouble();
             double latitut=dis.readDouble();
-            contactes.add(new Contacte(telefon, nom, directora, servei, adreca, longitut,latitut));
+            String web = dis.readUTF();
+            String correu= dis.readUTF();
+            contactes.add(new Contacte(telefon, nom, servei, adreca, longitut,latitut, web, correu));
 
 
         }

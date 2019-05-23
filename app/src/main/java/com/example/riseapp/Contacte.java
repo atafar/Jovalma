@@ -9,20 +9,29 @@ public class Contacte {
 
     private int TELEFON;
     private String NOM;
-    private String DIRECTORA;
     private String SERVEI;
     private String ADRECA;
     private double LONGITUT;
     private double LATITUT;
-
-    public Contacte(int TELEFON, String NOM, String DIRECTORA, String SERVEI, String ADRECA, double LONGITUT, double LATITUT) {
+    private String WEB;
+    private String CORREU;
+    public Contacte(int TELEFON, String NOM, String SERVEI, String ADRECA, double LONGITUT, double LATITUT, String WEB, String CORREU) {
         this.TELEFON = TELEFON;
         this.NOM = NOM;
-        this.DIRECTORA = DIRECTORA;
         this.SERVEI = SERVEI;
         this.ADRECA = ADRECA;
         this.LONGITUT = LONGITUT;
         this.LATITUT = LATITUT;
+        this.WEB=WEB;
+        this.CORREU=CORREU;
+    }
+
+    public String getWEB() {
+        return WEB;
+    }
+
+    public String getCORREU() {
+        return CORREU;
     }
 
     public int getTELEFON() {
@@ -31,10 +40,6 @@ public class Contacte {
 
     public String getNOM() {
         return NOM;
-    }
-
-    public String getDIRECTORA() {
-        return DIRECTORA;
     }
 
     public String getSERVEI() {

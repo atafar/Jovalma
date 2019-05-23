@@ -33,7 +33,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Constants;
-import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
@@ -183,12 +182,12 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
 
         if(Constants.getCurrentUser().getGender().equals("Hombre")||
-                Constants.getCurrentUser().getGender().equals("Home")|| Constants.getCurrentUser().getGender().equals("Man")){
+                Constants.getCurrentUser().getGender().equals("Home")|| Constants.getCurrentUser().getGender().equals("Male")){
             AppPreferences.getEditor().putInt("spinnerSelection",1);
             AppPreferences.getEditor().commit();
         }
         else if(Constants.getCurrentUser().getGender().equals("Dona")||
-                Constants.getCurrentUser().getGender().equals("Mujer")|| Constants.getCurrentUser().getGender().equals("Women")){
+                Constants.getCurrentUser().getGender().equals("Mujer")|| Constants.getCurrentUser().getGender().equals("Female")){
             AppPreferences.getEditor().putInt("spinnerSelection",2);
             AppPreferences.getEditor().commit();
         }

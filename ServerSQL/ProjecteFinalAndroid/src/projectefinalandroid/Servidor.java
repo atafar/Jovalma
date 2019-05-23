@@ -109,12 +109,13 @@ public class Servidor {
             while(resultat.next()){
                     int telefon=resultat.getInt("TELEFON");
                     String nom=resultat.getString("NOM");
-                    String directora=resultat.getString("DIRECTORA");
                     String servei=resultat.getString(idioma);
                     String adreca=resultat.getString("ADRECA");
                     double longitut=resultat.getDouble("LONGITUT");
                     double latitut=resultat.getDouble("LATITUT");
-                    contactes.add(new CONTACTE(telefon, nom, directora, servei, adreca, longitut,latitut));
+                    String web = resultat.getString("WEB");
+                    String correu = resultat.getString("CORREU");
+                    contactes.add(new CONTACTE(telefon, nom, servei, adreca, longitut,latitut,web,correu));
                     
                 }
         }
@@ -124,11 +125,12 @@ public class Servidor {
             for (int i = 0; i < contactes.size(); i++) {
                 dos.writeInt(contactes.get(i).getTELEFON());
                 dos.writeUTF(contactes.get(i).getNOM());
-                dos.writeUTF(contactes.get(i).getDIRECTORA());
                 dos.writeUTF(contactes.get(i).getSERVEI());
                 dos.writeUTF(contactes.get(i).getADRECA());
                 dos.writeDouble(contactes.get(i).getLONGITUT());
                 dos.writeDouble(contactes.get(i).getLATITUT());
+                dos.writeUTF(contactes.get(i).getWEB());
+                dos.writeUTF(contactes.get(i).getCORREU());
                 
             }
         }
