@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.riseapp;
+package com.example.riseapp.Fragments.InformatFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

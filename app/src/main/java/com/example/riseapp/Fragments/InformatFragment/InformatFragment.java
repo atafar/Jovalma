@@ -1,4 +1,4 @@
-package com.example.riseapp.Fragments;
+package com.example.riseapp.Fragments.InformatFragment;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Constants;
 import com.example.riseapp.GestionConexion;
 import com.example.riseapp.Helper.LocaleHelper;
-import com.example.riseapp.PagerAdapter;
 import com.example.riseapp.R;
 import com.example.riseapp.User;
 import com.google.android.gms.tasks.OnSuccessListener;

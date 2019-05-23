@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.riseapp;
+package com.example.riseapp.Fragments.InformatFragment;
 
 
 import android.os.Bundle;
@@ -23,22 +23,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.riseapp.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment3 extends Fragment {
+public class TabFragment2 extends Fragment {
 
 
-    public TabFragment3() {
+    public TabFragment2() {
         // Required empty public constructor
     }
-    
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_fragment3, container, false);
+        return inflater.inflate(R.layout.tab_fragment2, container, false);
     }
 
 }
