@@ -1,4 +1,6 @@
-package com.example.riseapp;
+package com.example.riseapp.Helper;
+
+import com.example.riseapp.Contacte;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

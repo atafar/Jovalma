@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.riseapp.AppPreferences;
+import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;

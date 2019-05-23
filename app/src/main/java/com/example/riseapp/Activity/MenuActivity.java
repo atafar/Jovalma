@@ -10,12 +10,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.riseapp.AppPreferences;
 import com.example.riseapp.Fragments.ContactaFragment;
 import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Fragments.InformatFragment.InformatFragment;
 import com.example.riseapp.Fragments.JovalmaFragment;
 import com.example.riseapp.Fragments.ProfileFragment;
+import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 

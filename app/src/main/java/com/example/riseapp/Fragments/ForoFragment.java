@@ -1,7 +1,5 @@
 package com.example.riseapp.Fragments;
 
-import android.webkit.WebChromeClient;
-import android.widget.ProgressBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
-import com.example.riseapp.AppPreferences;
+import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 

@@ -1,10 +1,11 @@
-package com.example.riseapp;
+package com.example.riseapp.Helper;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.riseapp.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,7 +19,7 @@ public  class Constants {
     private static FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private static FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
     private  static FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-    private static  User currentUser;
+    private static User currentUser;
     private static Uri currentUserProfileImage = null;
 
     public static Uri getCurrentUserProfileImage() {

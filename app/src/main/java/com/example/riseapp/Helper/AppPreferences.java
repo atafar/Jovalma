@@ -1,4 +1,4 @@
-package com.example.riseapp;
+package com.example.riseapp.Helper;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
