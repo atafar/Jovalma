@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.riseapp.Contacte;
 import com.example.riseapp.Helper.AppPreferences;
@@ -28,19 +29,31 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
     private RecyclerView mRecyclerView;
     private ContactosAdapter mAdapter;
-
     private final ArrayList<Contacte> mContactos = new ArrayList<>();
-
     Contacte contacto1, contacto2, contacto3, contacto4, contacto5;
-
     static GoogleMap map;
+
 
     public ContactaFragment(){
 
     }
 
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAdapterPosition();
+            // viewHolder.getItemId();
+            // viewHolder.getItemViewType();
+            // viewHolder.itemView;
+            Contacte contacto = mContactos.get(position);
+            Toast.makeText(getContext(), "You Clicked: " + contacto.getNOM(), Toast.LENGTH_SHORT).show();
+        }
+    };
+
     public static void changeMap(LatLng posicion){
-        map.animateCamera(CameraUpdateFactory.newLatLng(posicion));
+        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(42.000, 2.1685)));
     }
 
     @Override
@@ -71,6 +84,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         mRecyclerView.setAdapter(mAdapter);
         LinearLayoutManager l = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(l);
+        mAdapter.setItemClickListener(onItemClickListener);
 
         return activity;
     }

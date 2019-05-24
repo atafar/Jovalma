@@ -19,27 +19,30 @@ import java.util.LinkedList;
 public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.ViewHolder>{
     private final ArrayList<Contacte> mContactos;
     private LayoutInflater mInflater;
+    private View.OnClickListener onItemClickListener;
 
 
     public ContactosAdapter(Context context, ArrayList<Contacte> contactos){
         mInflater = LayoutInflater.from(context);
         mContactos = contactos;
     }
+
+    public void setItemClickListener(View.OnClickListener clickListener) {
+        onItemClickListener = clickListener;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, final int viewType) {
         View mItemView = mInflater.inflate(R.layout.basic_recycler_itemlist, parent, false);
         final ViewHolder mViewHolder = new ViewHolder(mItemView,this);
-        mItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LatLng posicion;
-                Contacte contactoActual = mContactos.get(viewType);
-
-                    posicion = new LatLng(contactoActual.getLATITUT(), contactoActual.getLONGITUT());
-                    ContactaFragment.changeMap(posicion);
-            }
-        });
+//        mItemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                LatLng posicion = null;
+//                ContactaFragment.changeMap(posicion);
+//            }
+//        });
         return mViewHolder;
 
     }
@@ -58,8 +61,11 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.View
     class ViewHolder extends RecyclerView.ViewHolder{
         public final TextView contactosItemView;
         final ContactosAdapter mAdapter;
+
         public ViewHolder(View itemView, ContactosAdapter adapter) {
             super(itemView);
+            itemView.setTag(this);
+            itemView.setOnClickListener(onItemClickListener);
             contactosItemView = itemView.findViewById(R.id.txtNombreContacto);
             mAdapter = adapter;
         }
