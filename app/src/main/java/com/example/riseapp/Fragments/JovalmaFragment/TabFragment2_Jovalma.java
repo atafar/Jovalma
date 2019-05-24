@@ -40,8 +40,9 @@ public class TabFragment2_Jovalma extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        final View activity = inflater.inflate(R.layout.tab_fragment2_quisom, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_fragment2_quisom, container, false);
+        return activity;
     }
 
 }

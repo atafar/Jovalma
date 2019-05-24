@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.riseapp.Fragments.InformatFragment.PagerAdapter_Informat;
 import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
@@ -24,9 +23,9 @@ public class JovalmaFragment extends Fragment {
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = activity.findViewById(R.id.tab_layout);
         // Set the text for each tab.
-        tabLayout.addTab(tabLayout.newTab().setText("1"));
-        tabLayout.addTab(tabLayout.newTab().setText("2"));
-        tabLayout.addTab(tabLayout.newTab().setText("3"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.quiSom));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.equip));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.contacta));
 
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);

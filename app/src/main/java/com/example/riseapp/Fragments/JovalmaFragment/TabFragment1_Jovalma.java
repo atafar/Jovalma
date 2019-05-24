@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.R;
 
 
@@ -60,7 +61,14 @@ public class TabFragment1_Jovalma extends Fragment {
             }
         });
         // Cargamos la web
-        browser.loadUrl("file:///android_asset/web/index.html");
+        if (AppPreferences.getSettings().getString("lang", "es").equals("es")) {
+            browser.loadUrl("file:///android_asset/web/quisomES");
+        } else if (AppPreferences.getSettings().getString("lang", "ca").equals("ca")) {
+            browser.loadUrl("file:///android_asset/web/quisomCA");
+        } else {
+            browser.loadUrl("file:///android_asset/web/quisomEN");
+        }
+
         return activity;
     }
 
