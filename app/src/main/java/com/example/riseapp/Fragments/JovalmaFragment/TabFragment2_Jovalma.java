@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.riseapp.Fragments.InformatFragment;
+package com.example.riseapp.Fragments.JovalmaFragment;
 
 
 import android.os.Bundle;
@@ -29,18 +29,19 @@ import com.example.riseapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment3 extends Fragment {
+public class TabFragment2_Jovalma extends Fragment {
 
 
-    public TabFragment3() {
+    public TabFragment2_Jovalma() {
         // Required empty public constructor
     }
-    
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_fragment3, container, false);
+        return inflater.inflate(R.layout.tab_fragment2_quisom, container, false);
     }
 
 }

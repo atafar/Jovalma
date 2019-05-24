@@ -89,10 +89,10 @@ public class InformatFragment extends Fragment {
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        // Use PagerAdapter to manage page views in fragments.
+        // Use PagerAdapter_Informat to manage page views in fragments.
         // Each page is represented by its own fragment.
         final ViewPager viewPager = activity.findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter
+        final PagerAdapter_Informat adapter = new PagerAdapter_Informat
                 (getFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 

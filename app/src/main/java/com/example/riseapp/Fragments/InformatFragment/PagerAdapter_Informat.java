@@ -23,10 +23,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 /**
  * Fragment to return the clicked tab.
  */
-public class PagerAdapter extends FragmentStatePagerAdapter {
+public class PagerAdapter_Informat extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+    public PagerAdapter_Informat(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }
@@ -39,9 +39,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0: return new TabFragment1();
-            case 1: return new TabFragment2();
-            case 2: return new TabFragment3();
+            case 0: return new TabFragment1_Informat();
+            case 1: return new TabFragment2_Informat();
+            case 2: return new TabFragment3_Informat();
             default: return null;
         }
     }

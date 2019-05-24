@@ -29,19 +29,17 @@ import com.example.riseapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment2 extends Fragment {
+public class TabFragment1_Informat extends Fragment {
 
-
-    public TabFragment2() {
+    public TabFragment1_Informat() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_fragment2, container, false);
+        // Inflate the layout for this fragment.
+        return inflater.inflate(R.layout.tab_fragment1_informat, container, false);
     }
 
 }

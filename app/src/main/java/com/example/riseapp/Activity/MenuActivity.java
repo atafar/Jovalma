@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import com.example.riseapp.Fragments.ContactaFragment;
 import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Fragments.InformatFragment.InformatFragment;
-import com.example.riseapp.Fragments.JovalmaFragment;
+import com.example.riseapp.Fragments.JovalmaFragment.JovalmaFragment;
 import com.example.riseapp.Fragments.ProfileFragment;
 import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.Helper.LocaleHelper;
