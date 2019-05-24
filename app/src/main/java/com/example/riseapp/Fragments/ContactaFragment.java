@@ -47,13 +47,15 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
             // viewHolder.getItemId();
             // viewHolder.getItemViewType();
             // viewHolder.itemView;
-            Contacte contacto = mContactos.get(position);
-            Toast.makeText(getContext(), "You Clicked: " + contacto.getNOM(), Toast.LENGTH_SHORT).show();
+            Contacte currentC = mContactos.get(position);
+
+            LatLng coordenada = new LatLng(currentC.getLATITUT(), currentC.getLONGITUT());
+            changeMap(coordenada);
         }
     };
 
-    public static void changeMap(LatLng posicion){
-        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(42.000, 2.1685)));
+    public void changeMap(LatLng posicion){
+        map.animateCamera(CameraUpdateFactory.newLatLng(posicion));
     }
 
     @Override
