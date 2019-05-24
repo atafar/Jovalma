@@ -34,7 +34,7 @@ public class JovalmaFragment extends Fragment {
         // Use PagerAdapter_Informat to manage page views in fragments.
         // Each page is represented by its own fragment.
         final ViewPager viewPager = activity.findViewById(R.id.pager);
-        final PagerAdapter_Informat adapter = new PagerAdapter_Informat
+        final PagerAdapter_Jovalma adapter = new PagerAdapter_Jovalma
                 (getFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 

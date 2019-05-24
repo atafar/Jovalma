@@ -22,6 +22,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.riseapp.R;
 
@@ -31,6 +33,8 @@ import com.example.riseapp.R;
  */
 public class TabFragment1_Jovalma extends Fragment {
 
+    public static WebView browser;
+
     public TabFragment1_Jovalma() {
         // Required empty public constructor
     }
@@ -38,8 +42,26 @@ public class TabFragment1_Jovalma extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment.
-        return inflater.inflate(R.layout.tab_fragment1_quisom, container, false);
+        final View activity = inflater.inflate(R.layout.tab_fragment1_quisom, container, false);
+
+        // Definimos el webView
+        browser=(WebView)activity.findViewById(R.id.webView);
+
+        //Habilitamos JavaScript
+        browser.getSettings().setJavaScriptEnabled(true);
+
+
+        browser.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+        // Cargamos la web
+        browser.loadUrl("file:///android_asset/web/index.html");
+        return activity;
     }
 
 }

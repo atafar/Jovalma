@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.riseapp.Fragments.ContactaFragment;
 import com.example.riseapp.R;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.LinkedList;
 
@@ -29,7 +30,8 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.View
         mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContactaFragment.changeMap();
+                LatLng posicion = null;
+                ContactaFragment.changeMap(posicion);
             }
         });
         return mViewHolder;

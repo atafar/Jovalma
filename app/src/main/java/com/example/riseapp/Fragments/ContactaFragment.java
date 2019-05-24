@@ -35,7 +35,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
         }
 
-        public static void changeMap(){
+        public static void changeMap(LatLng posicion){
             map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(42.000, 2.1685)));
         }
 
