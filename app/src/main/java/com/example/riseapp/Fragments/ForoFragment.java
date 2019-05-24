@@ -42,7 +42,14 @@ public class ForoFragment extends Fragment {
             }
         });
         // Cargamos la web
-        browser.loadUrl("http://fororiseapp.foroactivo.com");
+        if(AppPreferences.getSettings().getString("lang","es").equals("es")){
+            browser.loadUrl("http://fororiseapp.foroactivo.com/");
+        }else if(AppPreferences.getSettings().getString("lang","ca").equals("ca")){
+            browser.loadUrl("http://riseappca.foroactivo.com/");
+        }else{
+            browser.loadUrl("http://riseappen.foroactivo.com/");
+        }
+
 
         return activity;
     }
