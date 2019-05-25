@@ -36,8 +36,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/logo_app"
-                />
+                android:src="@drawable/logo_app" />
             <EditText
                 android:id="@+id/et_registro_email"
                 android:layout_width="match_parent"

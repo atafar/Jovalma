@@ -64,4 +64,8 @@
     <string name="torna_al_perfil">Torna enrere</string>
     <string name="correu_actualitzat">Correu actualitzat</string>
     <string name="no_actualitzatCorreu">Correu no actualitzat</string>
+    <string name="contacta_amb_nosaltres">CONTACTA AMB NOSALTRES!</string>
+    <string name="contacta">Contacta</string>
+    <string name="equip">Equip</string>
+    <string name="quiSom">Qui som?</string>
 </resources>
