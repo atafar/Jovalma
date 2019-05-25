@@ -35,7 +35,6 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
     static GoogleMap map;
     ImageView imgPhone;
 
-
     public ContactaFragment(){
 
     }
@@ -82,7 +81,29 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         imgPhone = activity.findViewById(R.id.imgPhone);
 
         mRecyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
-        mAdapter = new ContactosAdapter(getContext(), mContactos);
+        mAdapter = new ContactosAdapter(getContext(), mContactos, new ContactosAdapter.DetailsAdapterListener() {
+            @Override
+            public void tlfClick(View v, int position) {
+                Toast.makeText(getContext(), "Teléfono " + position, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void locationClick(View v, int position) {
+                Toast.makeText(getContext(), "Localización " + position, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void webClick(View v, int position) {
+                Toast.makeText(getContext(), "Web " + position, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void emailClick(View v, int position) {
+                Toast.makeText(getContext(), "Email " + position, Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
         mRecyclerView.setAdapter(mAdapter);
         LinearLayoutManager l = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(l);
