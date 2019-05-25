@@ -22,6 +22,7 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.View
         mInflater = LayoutInflater.from(context);
         mContactos = contactos;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
