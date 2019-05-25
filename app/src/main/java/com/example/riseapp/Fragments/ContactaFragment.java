@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.riseapp.Contacte;
@@ -32,6 +33,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
     private final ArrayList<Contacte> mContactos = new ArrayList<>();
     Contacte contacto1, contacto2, contacto3, contacto4, contacto5;
     static GoogleMap map;
+    ImageView imgPhone;
 
 
     public ContactaFragment(){
@@ -54,6 +56,8 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         }
     };
 
+
+
     public void changeMap(LatLng posicion){
         map.animateCamera(CameraUpdateFactory.newLatLng(posicion));
     }
@@ -74,6 +78,8 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         mContactos.add(contacto3);
         mContactos.add(contacto4);
         mContactos.add(contacto5);
+
+        imgPhone = activity.findViewById(R.id.imgPhone);
 
         mRecyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
         mAdapter = new ContactosAdapter(getContext(), mContactos);

@@ -1,70 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:background="@drawable/background_round"
-    android:orientation="vertical"
-    android:layout_height="200dp"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
     android:layout_width="300dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="200dp"
+    card_view:cardCornerRadius="12dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:backgroundTint="@color/card_color"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtNombreContacto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Nombre"
             android:textAlignment="center"
             android:textSize="35sp"
-            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             />
 
         <TextView
             android:id="@+id/txtServei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Servicio"
             android:textAlignment="center"
             android:textSize="30sp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            />
+            android:layout_marginTop="20dp"
+            >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+            <ImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_phone"/>
 
-        >
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_phone"
-            />
+            <ImageView
+                android:id="@+id/imgLocation"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_location" />
 
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_location"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="20dp"
-            />
+            <ImageView
+                android:id="@+id/imgWeb"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_web" />
 
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_web"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            />
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_email_black_24dp"
-            />
+            <ImageView
+                android:id="@+id/imgEmail"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_email_black_24dp" />
 
-
+        </LinearLayout>
     </LinearLayout>
 
-
-    </LinearLayout>
+</android.support.v7.widget.CardView>
 
 
