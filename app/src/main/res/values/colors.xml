@@ -24,6 +24,7 @@
     <color name="followingBg">#49BEFF</color>
     <color name="grey">#E5E5E5</color>
     <color name="card_color">#95C7F0</color>
+    <color name="map_background">#E7E7E7</color>
 
 
 </resources>
