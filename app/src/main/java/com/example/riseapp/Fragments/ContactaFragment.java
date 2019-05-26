@@ -24,7 +24,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
@@ -78,7 +77,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         mContactos.add(contacto4);
         mContactos.add(contacto5);
 
-        imgPhone = activity.findViewById(R.id.imgPhone);
+        //imgPhone = activity.findViewById(R.id.imgPhone);
 
         mRecyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
         mAdapter = new ContactosAdapter(getContext(), mContactos, new ContactosAdapter.DetailsAdapterListener() {
