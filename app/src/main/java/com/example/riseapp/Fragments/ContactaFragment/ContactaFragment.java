@@ -1,4 +1,4 @@
-package com.example.riseapp.Fragments;
+package com.example.riseapp.Fragments.ContactaFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,7 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class ContactaFragment extends Fragment implements OnMapReadyCallback {
+public class ContactaFragment extends Fragment implements OnMapReadyCallback, BottomSheetDialog.BottomSheetListener {
 
     private RecyclerView mRecyclerView;
     private ContactosAdapter mAdapter;
@@ -84,22 +84,42 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
         mAdapter = new ContactosAdapter(getContext(), mContactos, new ContactosAdapter.DetailsAdapterListener() {
             @Override
             public void tlfClick(View v, int position) {
-                Toast.makeText(getContext(), "Teléfono " + position, Toast.LENGTH_SHORT).show();
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                Bundle args = new Bundle();
+                args.putString("titulo", "Teléfono");
+                args.putString("info", Integer.toString(mContactos.get(position).getTELEFON()));
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getFragmentManager(), "BottomSheet");
             }
 
             @Override
             public void locationClick(View v, int position) {
-                Toast.makeText(getContext(), "Localización " + position, Toast.LENGTH_SHORT).show();
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                Bundle args = new Bundle();
+                args.putString("titulo", "Dirección");
+                args.putString("info", mContactos.get(position).getADRECA());
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getFragmentManager(), "BottomSheet");
             }
 
             @Override
             public void webClick(View v, int position) {
-                Toast.makeText(getContext(), "Web " + position, Toast.LENGTH_SHORT).show();
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                Bundle args = new Bundle();
+                args.putString("titulo", "Web");
+                args.putString("info", mContactos.get(position).getWEB());
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getFragmentManager(), "BottomSheet");
             }
 
             @Override
             public void emailClick(View v, int position) {
-                Toast.makeText(getContext(), "Email " + position, Toast.LENGTH_SHORT).show();
+                BottomSheetDialog bottomSheet = new BottomSheetDialog();
+                Bundle args = new Bundle();
+                args.putString("titulo", "Email");
+                args.putString("info", mContactos.get(position).getCORREU());
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getFragmentManager(), "BottomSheet");
             }
 
         });
@@ -131,4 +151,8 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
+    @Override
+    public void onButtonClicked(String text) {
+
+    }
 }
