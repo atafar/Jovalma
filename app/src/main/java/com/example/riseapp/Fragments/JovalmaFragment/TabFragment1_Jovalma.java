@@ -62,11 +62,11 @@ public class TabFragment1_Jovalma extends Fragment {
         });
         // Cargamos la web
         if (AppPreferences.getSettings().getString("lang", "es").equals("es")) {
-            browser.loadUrl("file:///android_asset/web/quisomES");
+            browser.loadUrl("file:///android_asset/web/quisomES.html");
         } else if (AppPreferences.getSettings().getString("lang", "ca").equals("ca")) {
-            browser.loadUrl("file:///android_asset/web/quisomCA");
+            browser.loadUrl("file:///android_asset/web/quisomCA.html");
         } else {
-            browser.loadUrl("file:///android_asset/web/quisomEN");
+            browser.loadUrl("file:///android_asset/web/quisomEN.html");
         }
 
         return activity;
