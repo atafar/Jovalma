@@ -85,7 +85,7 @@ public class InformatFragment extends Fragment {
         // Set the text for each tab.
         tabLayout.addTab(tabLayout.newTab().setText("1"));
         tabLayout.addTab(tabLayout.newTab().setText("2"));
-        tabLayout.addTab(tabLayout.newTab().setText("3"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.test));
 
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);

@@ -37,4 +37,90 @@
     <string name="ciudad">Ciutat:</string>
     <string name="Correu">Correu:</string>
     <string name="guardar">Desar</string>
+
+    <array name="all_questions">
+        <item>Quant et preocupa el teu pes i/o la teva figura corporal?:Em preocupa molt.
+            :De vegades em preocupa, només en moments puntuals.:No em preocupa gaire.
+        </item>
+        <item>Quant et preocupa guanyar un o dos kg?:Em fa por guanyar pes.:Ho tinc en compte per
+            mantenir el meu benestar físic.:M\'és igual guanyar o perdre uns kg.
+        </item>
+        <item>Quan va ser l\'última vegada que vas fer una dieta?:Actualment estic a dieta.:Fa temps
+            que vaig fer una dieta.:Mai no he fet cap dieta.
+        </item>
+        <item>Quina importància li dones al pes, respecte a altres aspectes de la teva vida i/o del
+            teu dia a dia?:El meu pes és un dels aspectes més importants per a mi.:El meu pes és
+            important per a mi, però de la mateixa manera que d\'altres aspectes.:El meu pes no és
+            gaire rellevant per a mi, respecte a altres aspectes.
+        </item>
+        <item>Sols sentir-te malament amb el teu cos?:Sí, la majoria del temp:Només de vegades, en
+            certes situacions o èpoques.:No, mai.
+        </item>
+        <item>Últimament, quants cops has sentit una pèrdua de control i has menjat una gran
+            quantitat d\'aliments en poc temps, molt més del que acostumes a menjar
+            diàriament?:Bastants cops.:Tan sols un cop.:Cap cop.
+        </item>
+        <item>Últimament, has utilitzat tècniques com provocar-te el vòmit, usar laxants o deixar de
+            menjar intencionadament un seguit d\'hores per controlar el teu pes i/o la teva figura
+            corporal?:Sí, he utilitzat aquestes tècniques.:Només he utilitzat una d\'aquestes
+            tècniques.:Mai no he utilitzat cap d\'aquestes tècniques.
+        </item>
+        <item>Tens falta d\'interès pel menjar i l\'alimentació?:Sí, és un tema que m\'incomoda:No
+            en tinc molt d\'interès, però sé que és important.:M\'interessen aquests aspectes, per
+            la meva bona salut.
+        </item>
+        <item>Evites certs aliments per la seva textura, la seva temperatura el seu olor, etc, per
+            por a què et sentin malament o a experimentar sensacions negatives?:Sí, ho solc fer.:Sí,
+            però amb molt pocs aliments.:No, no ho solc fer.
+        </item>
+        <item>Últimament, has tingut pensaments d\'autoferir-te perquè et sents malament amb el teu
+            pes i/o amb la teva figura corporal?:Sí, fins i tot he arribat a fer-ho.:Ho he pensat,
+            però no ho he fet.:No ho he pensat.
+        </item>
+    </array>
+    <string name="canviar_fto_perfil">Canviar foto de perfil</string>
+    <string name="city_noupdate">No s\'ha pogut actualitzar la ciutat</string>
+    <string name="ciutat_update">Ciutat actualitzada correctament</string>
+    <string name="contacta">Contacta</string>
+    <string name="contacta_amb_nosaltres">CONTACTA AMB NOSALTRES!</string>
+    <string name="contra_incorrecta">Contrasenya errònia</string>
+    <string name="contrasenya_vella">Contrasenya vella</string>
+    <string name="correu_actualitzat">Correu actualitzat</string>
+    <string name="correu_electr_nic">CORREU ELECTRÒNIC</string>
+    <string name="data_actualitzada">Data actualitzada</string>
+    <string name="des_de_la_galeria">Des de la galeria</string>
+    <string name="les_meves_dietes">Les meves dietes</string>
+    <string name="genere_noActualitzat">Gènere no actualitzat</string>
+    <string name="genere_actualitzat">Gènere actualitzat</string>
+    <string name="finish">Acaba</string>
+    <string name="fes_te_una_foto">Fes-te una foto</string>
+    <string name="estable_titol">ESTABLE</string>
+    <string name="error_actualitzardata">Error al actualitzar la data</string>
+    <string name="equip">Equip</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="alerta_titol">ALERTA</string>
+    <string name="actualitzar_contra">S\'ha actualitzat la contrasenya</string>
+    <string name="Perill">Et trobes en un punt de perillositat i problemàtica respecte al teu pes i/o la teva figura personal. Segons la teva situació a partir del resultat del test, et recomanem acudir ràpidament a un servei professional en l’àmbit de la salut mental, concretament especialitzat en els trastorns de la conducta alimentària.</string>
+    <string name="Estable">Et trobes en un punt estable respecte al teu pes i/o la teva figura personal. Segons la teva situació a partir del resultat del test, et recomanem seguir les pautes adequades que trobaràs en aquesta app per mantenir una bona salut mental i una millor qualitat de vida.</string>
+    <string name="Alerta">Et trobes en un punt d’alerta respecte al teu pes i/o la teva figura personal. Segons la teva situació a partir del resultat del test, et recomanem consultar amb una persona especialista en salut mental els teus dubtes i les teves preocupacions respecte a l’alimentació i el teu aspecte físic.</string>
+    <string name="next">Següent</string>
+    <string name="noPassUpdate">No s\'ha pogut actualitzar la contrasenya</string>
+    <string name="no_actualitzatCorreu">Correu no actualitzat</string>
+    <string name="nom_actualitzat">Nom actualitzat</string>
+    <string name="nou_email">Nou email</string>
+    <string name="nou_nom">NOU NOM</string>
+    <string name="nova_ciutat">NOVA CIUTAT</string>
+    <string name="nova_ciutat_minus">Nova ciutat</string>
+    <string name="nova_contrasenya">NOVA CONTRASENYA</string>
+    <string name="nova_contrasenya_minus">Nova contrasenya</string>
+    <string name="perill_titol">PERILL</string>
+    <string name="prev">Anterior</string>
+    <string name="question">Pregunta</string>
+    <string name="quiSom">Quí som?</string>
+    <string name="results">Resultats</string>
+    <string name="start_over">Torna a començar</string>
+    <string name="tancar_sessio">Tancar sessió</string>
+    <string name="test">Test</string>
+    <string name="title_activity_mapa_prueba">Mapa</string>
+    <string name="torna_al_perfil">Torna enrere</string>
 </resources>

@@ -37,4 +37,101 @@
     <string name="ciudad">Ciudad:</string>
     <string name="Correu">Correo:</string>
     <string name="guardar">Guardar</string>
+
+    <array name="all_questions">
+                
+        <item>Cuánto te preocupa tu peso y / o tu figura corporal?: Me preocupa mucho.: A veces me
+            preocupa, sólo en momentos puntuales.: No me preocupa demasiado.
+        </item>
+                
+        <item>¿Cuánto te preocupa ganar uno o dos kg?: Temo ganar peso.: Lo tengo en cuenta para
+            mantener mi bienestar físico.: Me da igual ganar o perder unos kg.
+        </item>
+                
+        <item>¿Cuándo fue la última vez que hacer una dieta?: Actualmente estoy a dieta.: Hace
+            tiempo que hice una dieta.: Nunca he hecho ninguna dieta.
+        </item>
+                
+        <item>¿Qué importancia le das al peso, respecto a otros aspectos de tu vida y / o de tu día
+            a día?: Mi peso es uno de los aspectos más importantes para mí.: Mi peso es importante
+            para mí , pero al igual que otros aspectos.: mi peso no es muy relevante para mí,
+            respecto a otros aspectos.
+        </item>
+                
+        <item>Sólo sentirte mal con tu cuerpo?: Sí, la mayoría del temp: Sólo a veces, en ciertas
+            situaciones o épocas.: No, nunca.
+        </item>
+                
+        <item>Últimamente, cuántas veces has sentido una pérdida de control y has comido una gran
+            cantidad de alimentos en poco tiempo, mucho más de lo que sueles comer diariamente?:
+            Bastantes veces.: Tan sólo una vez.: Ninguna vez.
+        </item>
+                
+        <item>Últimamente, has utilizado técnicas como provocarte el vómito, usar laxantes o dejar
+            de comer intencionadamente una serie de horas para controlar tu peso y / o tu figura
+            corporal?: Sí, he utilizado estas técnicas.: Sólo he utilizado una de estas técnicas.:
+            Nunca he utilizado ninguna de estas técnicas.
+        </item>
+                
+        <item>Tienes falta de interés por la comida y la alimentación?: Sí, es un tema que me
+            incomoda: No tengo mucho interés, pero sé que es importante.: Me interesan estos
+            aspectos, por mi buena salud.
+        </item>
+                
+        <item>Evitas ciertos alimentos por su textura, su temperatura su olor, etc, por miedo a que
+            te sientan mal o experimentar sensaciones negativas?: Sí, lo suelo hacer.: Sí, pero con
+            muy pocos alimentos.: No , no lo suelo hacer.
+        </item>
+                
+        <item>Últimamente, has tenido pensamientos de autoferir para que te sientes mal con tu peso
+            y / o con tu figura corporal?: Sí, incluso he llegado a hacerlo.: Lo he pensado, pero no
+            lo he hecho.: No lo he pensado.
+        </item>
+            
+    </array>
+    <string name="Alerta">Te encuentras en un punto de alerta respecto a tu peso y / o tu figura personal. Según tu situación a partir del resultado del test, te recomendamos consultar con un especialista en salud mental tus dudas y tus preocupaciones respecto a la alimentación y tu aspecto físico.</string>
+    <string name="Estable">Te encuentras en un punto estable respecto a tu peso y / o tu figura personal. Según tu situación a partir del resultado del test, te recomendamos seguir las pautas adecuadas que encontrarás en esta app para mantener una buena salud mental y una mejor calidad de vida.</string>
+    <string name="Perill">Te encuentras en un punto de peligrosidad y problemática respecto a tu peso y / o tu figura personal. Según tu situación a partir del resultado del test, te recomendamos acudir rápidamente a un servicio profesional en el ámbito de la salud mental, concretamente especializado en los trastornos de la conducta alimentaria.</string>
+    <string name="actualitzar_contra">Se ha actualizado la contraseña</string>
+    <string name="alerta_titol">ALERTA</string>
+    <string name="canviar_fto_perfil">Cambiar foto de perfil</string>
+    <string name="city_noupdate">No se pudo actualizar la ciudad</string>
+    <string name="ciutat_update">Ciudad actualizada correctamente</string>
+    <string name="contacta">Cantacta</string>
+    <string name="contacta_amb_nosaltres">CONTACTA CON NOSOTROS!</string>
+    <string name="contra_incorrecta">Contraseña errónea</string>
+    <string name="contrasenya_vella">Contraseña vieja</string>
+    <string name="correu_actualitzat">Correo actualizado</string>
+    <string name="correu_electr_nic">CORREO ELECTRÓNICO</string>
+    <string name="data_actualitzada">Fecha actualizada</string>
+    <string name="des_de_la_galeria">Desde la galeria</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="equip">Equipo</string>
+    <string name="error_actualitzardata">Error al actualitzar la fecha</string>
+    <string name="estable_titol">ESTABLE</string>
+    <string name="fes_te_una_foto">Hazte una foto</string>
+    <string name="finish">Acaba</string>
+    <string name="next">Siguiente</string>
+    <string name="noPassUpdate">No se pudo actualizar la contraseña</string>
+    <string name="no_actualitzatCorreu">Correo no actualizado</string>
+    <string name="nom_actualitzat">Nombre no actualizado</string>
+    <string name="genere_actualitzat">Género actualizado</string>
+    <string name="genere_noActualitzat">Género no actualizado</string>
+    <string name="les_meves_dietes">Mis dietas</string>
+    <string name="nou_email">Nuevo email</string>
+    <string name="nou_nom">NUEVO NOMBRE</string>
+    <string name="nova_ciutat">NUEVA CIUDAD</string>
+    <string name="nova_ciutat_minus">Nueva ciudad</string>
+    <string name="nova_contrasenya">Nueva contraseña</string>
+    <string name="nova_contrasenya_minus">Nueva contraseña</string>
+    <string name="perill_titol">PELIGRO</string>
+    <string name="prev">Anterior</string>
+    <string name="question">Pregunta</string>
+    <string name="quiSom">¿Quién somos?</string>
+    <string name="results">Resultados</string>
+    <string name="start_over">Vulve a empezar</string>
+    <string name="tancar_sessio">Cierra la session</string>
+    <string name="test">Test</string>
+    <string name="title_activity_mapa_prueba">Mapa</string>
+    <string name="torna_al_perfil">Volver atrás</string>
 </resources>

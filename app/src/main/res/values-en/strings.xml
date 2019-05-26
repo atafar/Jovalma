@@ -38,4 +38,103 @@
     <string name="Correu">Email:</string>
     <string name="guardar">Save</string>
 
+    <array name="all_questions">
+                
+        <item>How much do you worry about your weight and / or your body shape ?: I am very worried:
+            Sometimes it worries me, only at specific moments: I do not worry too much.
+        </item>
+                
+        <item>How much do you worry about winning one or two kg?: I\'m afraid to gain weight: I keep
+            it in mind to maintain my physical well-being .: I do not care about winning or losing a
+            few kg.
+        </item>
+                
+        <item>When was the last time you do a diet?: I am currently on a diet .: I\'ve been dieting
+            for a while now: I have never done any diet.
+        </item>
+                
+        <item>How important are you to the weight, regarding other aspects of your life and / or
+            your day to day?: My weight is one of the most important aspects for me: My weight is
+            important to me, but like other aspects: My weight is not very relevant to me, regarding
+            other aspects.
+        </item>
+                
+        <item>Only feel bad with your body ?: Yes, most of the temp: Only sometimes, in certain
+            situations or times: Never.
+        </item>
+                
+        <item>Lately, how many times have you felt a loss of control and have eaten a large amount
+            of food in a short time, much more than you usually eat daily ?: Many times: Only once
+            .: Never.
+        </item>
+                
+        <item>Lately, have you used techniques such as provoking vomiting, using laxatives or
+            intentionally stop eating a series of hours to control your weight and / or body shape
+            ?: Yes, I have used these techniques .: I have only used one of these techniques: I have
+            never used any of these techniques.
+        </item>
+                
+        <item>Do you lack interest in food and food ?: Yes, it is an issue that bothers me: I do not
+            have much interest, but I know it\'s important: I am interested in these aspects,
+            because
+            of my good health.
+        </item>
+                
+        <item>Do you avoid certain foods because of their texture, their temperature, their smell,
+            etc, for fear that they feel bad or experience negative sensations? :Yes, I usually do
+            it: Yes, but with very little food .: No, I do not usually do it.
+        </item>
+                
+        <item>Lately, have you had thoughts of self-driving so that you feel bad with your weight
+            and / or body shape ?: Yes, I even got to do it: I\'ve thought about it, but I have
+            not.:
+            I have not thought about it.
+        </item>
+    </array>
+    <string name="Alerta">You are at an alert point regarding your weight and / or your personal figure. Depending on your situation as a result of the test result, we recommend that you consult with a person specializing in mental health your doubts and concerns regarding your diet and your physical appearance.</string>
+    <string name="Estable">You are at a stable point in regard to your weight and / or your personal figure. Depending on your situation from the test result, we recommend that you follow the appropriate guidelines that you will find in this app to maintain good mental health and a better quality of life.</string>
+    <string name="Perill">You are at a dangerous and problematic point in regard to your weight and / or your personal figure. Depending on your situation as a result of the test result, we recommend that you go quickly to a professional service in the field of mental health, specifically specialized in eating disorders.</string>
+    <string name="actualitzar_contra">Your password has been updated</string>
+    <string name="alerta_titol">ALERT</string>
+    <string name="canviar_fto_perfil">Change profile photo</string>
+    <string name="city_noupdate">The city could not be updated</string>
+    <string name="ciutat_update">City updated successfully</string>
+    <string name="contacta">Contact</string>
+    <string name="contacta_amb_nosaltres">CONTACT WITH US!</string>
+    <string name="contra_incorrecta">Wrong password</string>
+    <string name="contrasenya_vella">Old password</string>
+    <string name="correu_actualitzat">Email updated</string>
+    <string name="correu_electr_nic">EMAIL</string>
+    <string name="data_actualitzada">Date updated</string>
+    <string name="des_de_la_galeria">From gallery</string>
+    <string name="editar_perfil">Edit profile</string>
+    <string name="equip">Team</string>
+    <string name="error_actualitzardata">Error updating the date</string>
+    <string name="estable_titol">STABLE</string>
+    <string name="fes_te_una_foto">Take a picture</string>
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+    <string name="noPassUpdate">The password could not be updated</string>
+    <string name="no_actualitzatCorreu">Email not updated</string>
+    <string name="nom_actualitzat">Name not updated</string>
+    <string name="genere_actualitzat">Gender updated</string>
+    <string name="genere_noActualitzat">Gender not updated</string>
+    <string name="les_meves_dietes">My diets</string>
+    <string name="nou_email">New email</string>
+    <string name="nou_nom">NEW NAME</string>
+    <string name="nova_ciutat">NEW CITY</string>
+    <string name="nova_ciutat_minus">New city</string>
+    <string name="nova_contrasenya">NEW PASSWORD</string>
+    <string name="nova_contrasenya_minus">New password</string>
+    <string name="perill_titol">DANGER</string>
+    <string name="prev">Previous</string>
+    <string name="question">Question</string>
+    <string name="quiSom">Who are we?</string>
+    <string name="results">Results</string>
+    <string name="start_over">Start again</string>
+    <string name="tancar_sessio">Close the session</string>
+    <string name="test">Test</string>
+    <string name="title_activity_mapa_prueba">Map</string>
+    <string name="torna_al_perfil">Go back</string>
+
 </resources>
