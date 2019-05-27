@@ -70,19 +70,19 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
         View activity = inflater.inflate(R.layout.mapa_fragment, container, false);
         LocaleHelper.setLocale(activity.getContext(), AppPreferences.getSettings().getString("lang","es"));
 
-//        contacto1 = new Contacte(677420309, "Maria", "Psicóloga", "c/ Prueba 123", 42.100, 2.1695, "azucar.com", "1@1.1");
-//        contacto2 = new Contacte(654125458, "Mario", "Psicólogo", "c/ Prueba 999", 42.200, 2.1705, "pera.com", "2@1.1");
-//        contacto3 = new Contacte(455214532, "Pepe", "Sicario", "c/ Prueba 666", 43.000, 1.1685, "melon.com", "3@1.1");
-//        contacto4 = new Contacte(695412545, "Carmen", "Fontanera", "c/ Salud 123", 42.300, 2.1685, "piña.com", "4@1.1");
-//        contacto5 = new Contacte(145236574, "Pedro", "Medico", "c/ Palma 123", 42.000, 2.2685, "melocoton.com", "5@1.1");
-//
-//        mContactos.add(contacto1);
-//        mContactos.add(contacto2);
-//        mContactos.add(contacto3);
-//        mContactos.add(contacto4);
-//        mContactos.add(contacto5);
+        contacto1 = new Contacte(677420309, "Maria Del Carmen De La Felicidad", "Psicóloga", "c/ Prueba 123", 42.100, 2.1695, "azucar.com", "1@1.1");
+        contacto2 = new Contacte(654125458, "Mario", "Psicólogo", "c/ Prueba 999", 42.200, 2.1705, "pera.com", "2@1.1");
+        contacto3 = new Contacte(455214532, "Pepe", "Sicario", "c/ Prueba 666", 43.000, 1.1685, "melon.com", "3@1.1");
+        contacto4 = new Contacte(695412545, "Carmen", "Fontanera", "c/ Salud 123", 42.300, 2.1685, "piña.com", "4@1.1");
+        contacto5 = new Contacte(145236574, "Pedro", "Medico", "c/ Palma 123", 42.000, 2.2685, "melocoton.com", "5@1.1");
 
-        mContactos = GestionConexion.getContactes();
+        mContactos.add(contacto1);
+        mContactos.add(contacto2);
+        mContactos.add(contacto3);
+        mContactos.add(contacto4);
+        mContactos.add(contacto5);
+
+//        mContactos = GestionConexion.getContactes();
 
 
         mRecyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
