@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:fontFamily="@font/displayfont"
+        android:textColor="@android:color/black"
         android:text="@string/nou_nom"
         android:textSize="20sp" />
 

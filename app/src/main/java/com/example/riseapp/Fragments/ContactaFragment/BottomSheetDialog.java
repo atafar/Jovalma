@@ -1,6 +1,8 @@
 package com.example.riseapp.Fragments.ContactaFragment;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialogFragment;
@@ -35,7 +37,19 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             txtInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), "PRUEBA", Toast.LENGTH_SHORT).show();
+                    if(titulo.equals("Teléfono")|| titulo.equals("Telèfono")||titulo.equals("Phone")){
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + info));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }else if(titulo.equals("Web")){
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(info));
+                        browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(browserIntent);
+                    }else if(titulo.equals("Correu")||titulo.equals("Correo")||titulo.equals("Email")){
+
+                        startActivity(sendEmail(info));
+                    }
+
                 }
             });
 
@@ -62,5 +76,20 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             throw new ClassCastException(context.toString()
                     + " must implement BottomSheetListener");
         }
+    }
+    public static Intent sendEmail(String email) {
+
+        String[] TO = {email};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setType("message/rfc822");
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return emailIntent;
+
+
+
     }
 }

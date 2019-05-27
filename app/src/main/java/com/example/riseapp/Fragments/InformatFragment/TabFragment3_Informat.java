@@ -76,9 +76,9 @@ public class TabFragment3_Informat extends Fragment {
 
         all_questions = getResources().getStringArray(R.array.all_questions);
 
-        if (savedInstanceState == null) {
-            startOver();
-        }
+
+        startOver();
+
 
 
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -158,12 +158,12 @@ public class TabFragment3_Informat extends Fragment {
                 startOver();
             }
         });
-        builder.setNegativeButton(R.string.start_over, new DialogInterface.OnClickListener() {
+        /*builder.setNegativeButton(R.string.start_over, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 startOver();
             }
-        });
+        });*/
         builder.create().show();
     }
 

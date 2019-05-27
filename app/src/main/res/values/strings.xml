@@ -6,7 +6,7 @@
     <string name="username">Nombre de usuario</string>
     <string name="emptyStringsError">S\'han d\'omplir tots els camps</string>
     <string name="titleRegistre">Registre</string>
-    <string name="repeatPassword">Escriu de nou la contrasenya</string>
+    <string name="repeatPassword">Repeteix contrasenya</string>
     <string name="user_exists_error">Aquest email ja esta registrat</string>
     <string name="user_weakpass_error">La contrasenya es molt curta</string>
     <string name="notEqualPassReg">Les contrasenyes no coincideixen</string>

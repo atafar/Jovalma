@@ -10,7 +10,7 @@
     <string name="nom_usuario">Name</string>
     <string name="password">Password</string>
     <string name="registrat">Register</string>
-    <string name="repeatPassword">Write again your password</string>
+    <string name="repeatPassword">Repeat your password</string>
     <string name="repeteix_contrasenya">Repeat your password</string>
     <string name="termes_i_condicions">Terms and conditions</string>
     <string name="titleRegistre">Register</string>
@@ -85,7 +85,7 @@
             it: Yes, but with very little food .: No, I do not usually do it.
         </item>
                 
-        <item>Lately, have you had thoughts of self-driving so that you feel bad with your weight
+        <item>Lately, have you had thoughts of self-injure so that you feel bad with your weight
             and / or body shape ?: Yes, I even got to do it: I\'ve thought about it, but I have
             not.:
             I have not thought about it.

@@ -15,7 +15,7 @@
     <string name="notValidEmail">El correu no és vàlid</string>
     <string name="password">Contrasenya</string>
     <string name="registrat">Registra\'t</string>
-    <string name="repeatPassword">Torna a escriure la contrasenya</string>
+    <string name="repeatPassword">Repeteix contrasenya</string>
     <string name="repeteix_contrasenya">Repeteix contrasenya</string>
     <string name="termes_i_condicions">Termes i condicions</string>
     <string name="titleRegistre">Registre</string>
