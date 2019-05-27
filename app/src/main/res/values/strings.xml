@@ -81,6 +81,10 @@
     <string name="estable_titol">ESTABLE</string>
     <string name="alerta_titol">ALERTA</string>
     <string name="test">Test</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="web">Web</string>
+    <string name="email">Email</string>
 
     <array name="all_questions">
         <item>Quant et preocupa el teu pes i/o la teva figura corporal?:Em preocupa molt.

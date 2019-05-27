@@ -87,7 +87,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
             public void tlfClick(View v, int position) {
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 Bundle args = new Bundle();
-                args.putString("titulo", "Teléfono");
+                args.putString("titulo", getString(R.string.telefono));
                 args.putString("info", Integer.toString(mContactos.get(position).getTELEFON()));
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getFragmentManager(), "BottomSheet");
@@ -97,7 +97,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
             public void locationClick(View v, int position) {
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 Bundle args = new Bundle();
-                args.putString("titulo", "Dirección");
+                args.putString("titulo", getString(R.string.direccion));
                 args.putString("info", mContactos.get(position).getADRECA());
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getFragmentManager(), "BottomSheet");
@@ -107,7 +107,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
             public void webClick(View v, int position) {
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 Bundle args = new Bundle();
-                args.putString("titulo", "Web");
+                args.putString("titulo", getString(R.string.web));
                 args.putString("info", mContactos.get(position).getWEB());
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getFragmentManager(), "BottomSheet");
@@ -117,7 +117,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
             public void emailClick(View v, int position) {
                 BottomSheetDialog bottomSheet = new BottomSheetDialog();
                 Bundle args = new Bundle();
-                args.putString("titulo", "Email");
+                args.putString("titulo", getString(R.string.email));
                 args.putString("info", mContactos.get(position).getCORREU());
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getFragmentManager(), "BottomSheet");
