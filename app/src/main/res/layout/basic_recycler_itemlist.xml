@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:text="Nombre"
             android:textAlignment="center"
-            android:textSize="35sp"
+            android:textSize="20sp"
             android:layout_marginTop="20dp"
             />
 
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:text="Servicio"
             android:textAlignment="center"
-            android:textSize="30sp"
+            android:textSize="15sp"
             />
 
         <LinearLayout
