@@ -5,7 +5,6 @@
     <string name="password">Contrasenya</string>
     <string name="username">Nombre de usuario</string>
     <string name="emptyStringsError">S\'han d\'omplir tots els camps</string>
-    <string name="email">Email</string>
     <string name="titleRegistre">Registre</string>
     <string name="repeatPassword">Escriu de nou la contrasenya</string>
     <string name="user_exists_error">Aquest email ja esta registrat</string>

@@ -32,6 +32,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
     private RecyclerView mRecyclerView;
     private ContactosAdapter mAdapter;
     private ArrayList<Contacte> mContactos = new ArrayList<>();
+    private ArrayList<Marker> markers = new ArrayList<>();
     Contacte contacto1, contacto2, contacto3, contacto4, contacto5;
     static GoogleMap map;
 
@@ -50,7 +51,10 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
             // viewHolder.itemView;
             Contacte currentC = mContactos.get(position);
 
+            markers.get(position).showInfoWindow();
+
             LatLng coordenada = new LatLng(currentC.getLONGITUT(), currentC.getLATITUT());
+
             changeMap(coordenada);
         }
     };
@@ -58,7 +62,7 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
 
 
     public void changeMap(LatLng posicion){
-        map.animateCamera(CameraUpdateFactory.newLatLng(posicion));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posicion, 16.0f));
     }
 
     @Override
@@ -146,9 +150,9 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
         LatLng pp = new LatLng(41.3818, 2.1685);
 
         for (int i = 0; i < mContactos.size(); i++) {
-            Marker marker = map.addMarker(new MarkerOptions()
+            markers.add(map.addMarker(new MarkerOptions()
                     .position(new LatLng(mContactos.get(i).getLONGITUT(), mContactos.get(i).getLATITUT()))
-                    .title(mContactos.get(i).getNOM()));
+                    .title(mContactos.get(i).getNOM())));
         }
 
         MarkerOptions option = new MarkerOptions();
