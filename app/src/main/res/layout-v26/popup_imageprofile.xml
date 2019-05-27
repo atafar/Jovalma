@@ -25,6 +25,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/displayfont"
         android:text="@string/fes_te_una_foto"
          />
 
@@ -33,6 +35,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/displayfont"
         android:text="@string/des_de_la_galeria"
          />
 

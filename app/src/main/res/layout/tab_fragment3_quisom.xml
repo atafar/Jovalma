@@ -29,6 +29,8 @@
         android:layout_marginTop="82dp"
         android:layout_marginBottom="78dp"
         android:layout_gravity="center"
+        android:fontFamily="@font/displayfont"
+        android:textSize="30sp"
         android:text="@string/contacta_amb_nosaltres" />
 
     <LinearLayout

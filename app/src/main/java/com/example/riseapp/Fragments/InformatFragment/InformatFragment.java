@@ -79,8 +79,8 @@ public class InformatFragment extends Fragment {
         con.setLang(AppPreferences.getSettings().getString("lang","es"));
         con.start();
 
-        //con.getContactes();
-// Create an instance of the tab layout from the view.
+        //GestionConexion.getContactes();
+        // Create an instance of the tab layout from the view.
         TabLayout tabLayout = activity.findViewById(R.id.tab_layout);
         // Set the text for each tab.
         tabLayout.addTab(tabLayout.newTab().setText("1"));

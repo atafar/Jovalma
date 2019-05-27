@@ -172,6 +172,7 @@
                         android:id="@+id/sp_gender_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
                         android:dropDownSelector="@android:color/white"
                         android:imeOptions="actionNext"
                         />

@@ -14,7 +14,7 @@
     <string name="notEqualPassReg">Las contraseñas no coinciden</string>
     <string name="notValidEmail">El correo no es válido</string>
     <string name="registrat">Registrate</string>
-    <string name="repeatPassword">Escribe la contraseña otra vez</string>
+    <string name="repeatPassword">Repite tu contraseña</string>
     <string name="repeteix_contrasenya">Repite tu contraseña</string>
     <string name="termes_i_condicions">Términos y condiciones</string>
     <string name="titleRegistre">Registro</string>
@@ -83,7 +83,7 @@
             muy pocos alimentos.: No , no lo suelo hacer.
         </item>
                 
-        <item>Últimamente, has tenido pensamientos de autoferir para que te sientes mal con tu peso
+        <item>Últimamente, has tenido pensamientos de autolesionarte para que te sientes mal con tu peso
             y / o con tu figura corporal?: Sí, incluso he llegado a hacerlo.: Lo he pensado, pero no
             lo he hecho.: No lo he pensado.
         </item>
@@ -97,7 +97,7 @@
     <string name="canviar_fto_perfil">Cambiar foto de perfil</string>
     <string name="city_noupdate">No se pudo actualizar la ciudad</string>
     <string name="ciutat_update">Ciudad actualizada correctamente</string>
-    <string name="contacta">Cantacta</string>
+    <string name="contacta">Contacta</string>
     <string name="contacta_amb_nosaltres">CONTACTA CON NOSOTROS!</string>
     <string name="contra_incorrecta">Contraseña errónea</string>
     <string name="contrasenya_vella">Contraseña vieja</string>
@@ -122,7 +122,7 @@
     <string name="nou_nom">NUEVO NOMBRE</string>
     <string name="nova_ciutat">NUEVA CIUDAD</string>
     <string name="nova_ciutat_minus">Nueva ciudad</string>
-    <string name="nova_contrasenya">Nueva contraseña</string>
+    <string name="nova_contrasenya">NUEVA CONTRASEÑA</string>
     <string name="nova_contrasenya_minus">Nueva contraseña</string>
     <string name="perill_titol">PELIGRO</string>
     <string name="prev">Anterior</string>
