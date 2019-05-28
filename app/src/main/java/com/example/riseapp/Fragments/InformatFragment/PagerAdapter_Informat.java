@@ -42,6 +42,15 @@ public class PagerAdapter_Informat extends FragmentStatePagerAdapter {
             case 0: return new TabFragment1_Informat();
             case 1: return new TabFragment2_Informat();
             case 2: return new TabFragment3_Informat();
+            case 3:
+                return new TabFragment4_Informat();
+            case 4:
+                return new TabFragment5_Informat();
+            case 5:
+                return new TabFragment6_Informat();
+            case 6:
+                return new TabFragment7_Informat();
+
             default: return null;
         }
     }

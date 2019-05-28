@@ -83,12 +83,17 @@ public class InformatFragment extends Fragment {
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = activity.findViewById(R.id.tab_layout);
         // Set the text for each tab.
-        tabLayout.addTab(tabLayout.newTab().setText("1"));
-        tabLayout.addTab(tabLayout.newTab().setText("2"));
+        tabLayout.addTab(tabLayout.newTab().setText("TIPUS TCA"));
+        tabLayout.addTab(tabLayout.newTab().setText("SENYALS D'ALERTA"));
+        tabLayout.addTab(tabLayout.newTab().setText("RISCOS TCA"));
+        tabLayout.addTab(tabLayout.newTab().setText("CREENCIES FALSES TCA"));
+        tabLayout.addTab(tabLayout.newTab().setText("ALIMENTACIÓ"));
+        tabLayout.addTab(tabLayout.newTab().setText("HABILITATS SOCIALS"));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.test));
 
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         // Use PagerAdapter_Informat to manage page views in fragments.
         // Each page is represented by its own fragment.
