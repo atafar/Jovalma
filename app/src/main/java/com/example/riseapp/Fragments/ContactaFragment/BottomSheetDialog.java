@@ -45,7 +45,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(info));
                         browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(browserIntent);
-                    }else if(titulo.equals("Correu")||titulo.equals("Correo")||titulo.equals("Email")){
+                    } else if (titulo.equals("Correu electrònic") || titulo.equals("Correo electrónico") || titulo.equals("Email")) {
 
                         startActivity(sendEmail(info));
                     }
