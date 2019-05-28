@@ -5,6 +5,13 @@
 DROP DATABASE IF EXISTS INFORMACION;
 CREATE DATABASE INFORMACION;
 DROP USER IF EXISTS InformacionAdmin;
+/* Base de datos POKEMON */
+
+# Creamos la base de datos
+
+DROP DATABASE IF EXISTS INFORMACION;
+CREATE DATABASE INFORMACION;
+DROP USER IF EXISTS InformacionAdmin;
 CREATE USER InformacionAdmin IDENTIFIED BY 'InformacionPass';
 GRANT ALL PRIVILEGES ON INFORMACION.* TO InformacionAdmin WITH GRANT OPTION;
 USE INFORMACION;
@@ -41,7 +48,7 @@ Hospitalization unit, day hospital and external consultations","Hospital de dia 
 "C/Balmes, 203, principal 1a, 08006 Barcelona",41.398048, 2.151553, "http://www.setcabarcelona.com/","info@setcabarcelona.com");
 INSERT INTO CONTACTES VALUES(934959203,"UMAIN: Instituto de Neurociencias",  "Unidad de hospitalización, hospital de día y consultas externas","
 Hospitalization unit, day hospital and external consultations","Hospital de dia i consultes externes",
-"C/ Londres, 38, 08029, Barcelona",41.389434, 2.145540, "https://es.linkedin.com/company/umain-instituto-neurociencias",NULL);
+"C/ Londres, 38, 08029, Barcelona",41.389434, 2.145540, "https://es.linkedin.com/company/umain-instituto-neurociencias","null");
 INSERT INTO CONTACTES VALUES(936836965,"Desconect@", "Unidad de hospitalización, hospital de día y consultas externas","
 Hospitalization unit, day hospital and external consultations","Hospital de dia i consultes externes",
 "C/ Berlinés, 13, 08022, Barcelona",41.404038, 2.139013, "https://www.programadesconecta.com/","hospitaldedia@programadesconcta.com");
@@ -53,10 +60,10 @@ Day hospital and external consultations","Consulta externa / ambulatori ",
 "C/ Gran de Gràcia, 1, 1r, 2a, 08012 Barcelona",41.397852, 2.157335, "https://www.paolaespinozaguzman.com","info@paolaespinozaguzman.com");
 INSERT INTO CONTACTES VALUES(932090899,"Galton gabinet col·lectiu","Consulta externa / ambulatorio","
 Day hospital and external consultations","Consulta externa / ambulatori ",
-"C/ Muntaner, 208, entresol 2a, 08036, Barcelona",41.397852, 2.157335, "www.galtonbarcelona.com","galton.barcelona@gmail.com");
+"C/ Muntaner, 208, entresol 2a, 08036, Barcelona",41.397852, 2.157335, "https://www.galtonbarcelona.com","galton.barcelona@gmail.com");
 INSERT INTO CONTACTES VALUES(625640719,"Marta Andújar – Espai Gestal de Barcelona",  "Consulta externa / ambulatorio","
 Day hospital and external consultations","Consulta externa / ambulatori ",
-"Plaça Universitat, 4, 3r 1a, Barcelona",41.384975, 2.163557, "www.gestaltcentre.es","martandujarc@gestaltcentre.es");
+"Plaça Universitat, 4, 3r 1a, Barcelona",41.384975, 2.163557, "https://www.gestaltcentre.es","martandujarc@gestaltcentre.es");
 INSERT INTO CONTACTES VALUES(932607600,"Hospital de Bellvitge",  "UTCA UNIDAD DE TRASTORNOS DE LA CONDUCTA ALIMENTARIA","
 UTCA UND DEVELOPMENT OF FOOD CONDUCT","UTCA UNITAT DE TRASTORNS DE LA CONDUCTA ALIMENTÀRIA",
 "Feixa llarga s/n, 08907, L’Hospitalet de Llobregat",41.346508, 2.101109, "http://www.bellvitgehospital.cat/es","uac@bellvitgehospital.cat");
@@ -68,7 +75,7 @@ UTCA UND DEVELOPMENT OF FOOD CONDUCT","UTCA UNITAT DE TRASTORNS DE LA CONDUCTA A
 "Crta. De Canyet, s/n, 08916, Badalona",41.467935, 2.234754, "http://www.hospitalgermanstrias.cat/es","comunicacio.germanstrias@gencat.cat");
 INSERT INTO CONTACTES VALUES(932279970,"Hospital Clínic",  "UTCA UNIDAD DE TRASTORNOS DE LA CONDUCTA ALIMENTARIA","
 UTCA UND DEVELOPMENT OF FOOD CONDUCT","UTCA UNITAT DE TRASTORNS DE LA CONDUCTA ALIMENTÀRIA",
-"C/ Villaroel 170, 08036, Barcelona",41.389192, 2.151683, "https://www.hospitalclinic.org/",NULL);
+"C/ Villaroel 170, 08036, Barcelona",41.389192, 2.151683, "https://www.hospitalclinic.org/","null");
 INSERT INTO CONTACTES VALUES(932804000,"Hospital Sant Joan de Déu",  "UTCA UNIDAD DE TRASTORNOS DE LA CONDUCTA ALIMENTARIA","
 UTCA UND DEVELOPMENT OF FOOD CONDUCT","UTCA UNITAT DE TRASTORNS DE LA CONDUCTA ALIMENTÀRIA",
 "Passeig Sant Joan de Déu, s/n, 08950, Esplugues de Llobregat",41.384088, 2.102324, "https://www.sjdhospitalbarcelona.org/es/especialistas","infovisidoc@sjdhospitalbarcelona.org");
