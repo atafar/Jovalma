@@ -24,6 +24,8 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             />
 
         <TextView
@@ -36,45 +38,46 @@
             android:textSize="15sp"
             />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgPhone"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="@drawable/ic_phone"
-                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true">
 
-            <ImageView
-                android:id="@+id/imgLocation"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/ic_location"
-                />
+                <ImageView
+                    android:id="@+id/imgPhone"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_phone" />
 
-            <ImageView
-                android:id="@+id/imgWeb"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/ic_web" />
+                <ImageView
+                    android:id="@+id/imgLocation"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_location" />
 
-            <ImageView
-                android:id="@+id/imgEmail"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="@drawable/ic_email_black_24dp"
-                />
+                <ImageView
+                    android:id="@+id/imgWeb"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_web" />
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgEmail"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_email_black_24dp" />
+
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
