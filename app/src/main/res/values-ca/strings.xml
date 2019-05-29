@@ -123,4 +123,10 @@
     <string name="test">Test</string>
     <string name="title_activity_mapa_prueba">Mapa</string>
     <string name="torna_al_perfil">Torna enrere</string>
+    <string name="telefono">Telèfon</string>
+    <string name="gender_dona">Dona</string>
+    <string name="gender_home">Home</string>
+    <string name="direccion">Direcció</string>
+    <string name="has_olvidado_tu_contrase_a">Has ovlidat la teva contrasenya?Click aquí</string>
+    <string name="restablecer_pass">Hem enviat un correu al seu compte</string>
 </resources>

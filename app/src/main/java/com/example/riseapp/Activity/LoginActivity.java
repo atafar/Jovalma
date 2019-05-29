@@ -1,15 +1,20 @@
 package com.example.riseapp.Activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,30 +23,38 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.riseapp.Helper.AppPreferences;
+import com.example.riseapp.Helper.Constants;
 import com.example.riseapp.Helper.LocaleHelper;
 import com.example.riseapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Locale;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static android.support.constraint.Constraints.TAG;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     private ImageView appIcon;
     private ImageButton btnEnglish, btnSpanish, btnCatalan;
-
+    private Dialog myDialog;
     private long duracion = 2000;
 
 //    private UsuariRepositori mUserRepository;
 
     private EditText etUsuari, etPassword;
     private Button btnLogin, btnRegister;
-    private TextView tv_alternative,tv_tac;
+    private TextView tv_alternative,tv_tac,tv_passForgot;
 
     private FirebaseAuth mAuth;
 
@@ -73,8 +86,16 @@ public class LoginActivity extends AppCompatActivity {
         tv_alternative= findViewById(R.id.tv_alternative);
         tv_tac=findViewById(R.id.tv_tac);
         mAuth = FirebaseAuth.getInstance();
+        myDialog = new Dialog(this);
+        tv_passForgot= findViewById(R.id.tv_contraOlvida);
 
+        tv_passForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                showPopUp_email();
+            }
+        });
         //IDIOMA AL INICIO O POR DEFECTO
 
 
@@ -246,6 +267,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister.setText( context.getResources().getString(R.string.registrat));
         tv_alternative.setText( context.getResources().getString(R.string.no_tens_un_compte_registra_t));
         tv_tac.setText(context.getResources().getString(R.string.termes_i_condicions));
+        tv_passForgot.setText(context.getResources().getString(R.string.has_olvidado_tu_contrase_a));
 
     }
 
@@ -307,5 +329,73 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
 
+    }
+    private void showPopUp_email() {
+        final TextView txtClose, tv_wrong_email, tv_empty_email;
+        Button save;
+        final AutoCompleteTextView newEmail;
+
+        myDialog.setContentView(R.layout.popup_email);
+        save = myDialog.findViewById(R.id.btn_save_email);
+
+        tv_empty_email = myDialog.findViewById(R.id.tv_empty);
+        tv_wrong_email= myDialog.findViewById(R.id.tv_wrong_email);
+        newEmail = myDialog.findViewById(R.id.newEmail);
+        txtClose = myDialog.findViewById(R.id.txtClose_email);
+        newEmail.setHint(getString(R.string.email));
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (email_isValidated( tv_empty_email,tv_wrong_email, newEmail)) {
+                    final String nEmail = newEmail.getText().toString();
+
+                    Constants.getFirebaseAuth().sendPasswordResetEmail(nEmail);
+                    displayToast(getString(R.string.restablecer_pass));
+                    myDialog.dismiss();
+                   }
+            }
+        });
+
+        Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
+    private boolean email_isValidated(TextView tv_empty_email, TextView tv_wrong_email, AutoCompleteTextView newEmail) {
+        if(isEmpty(newEmail)){
+            tv_empty_email.setVisibility(View.VISIBLE);
+            tv_wrong_email.setVisibility(View.GONE);
+            return false;
+        }else{
+            if(!isEmailValid(newEmail.getText().toString())){
+                tv_empty_email.setVisibility(View.GONE);
+                tv_wrong_email.setVisibility(View.VISIBLE);
+                return false;
+            }
+            else{
+                tv_empty_email.setVisibility(View.GONE);
+                tv_wrong_email.setVisibility(View.GONE);
+
+                return true;
+            }
+        }
+    }
+
+    public static boolean isEmailValid(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    private boolean isEmpty(EditText editText) {
+        return (editText.getText().toString().trim().length() == 0);
+    }
+    private void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 }

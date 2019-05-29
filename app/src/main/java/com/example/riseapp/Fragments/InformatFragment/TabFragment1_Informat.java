@@ -22,7 +22,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
+import com.example.riseapp.Helper.AppPreferences;
 import com.example.riseapp.R;
 
 
@@ -30,7 +33,7 @@ import com.example.riseapp.R;
  * A simple {@link Fragment} subclass.
  */
 public class TabFragment1_Informat extends Fragment {
-
+    public static WebView browser;
     public TabFragment1_Informat() {
         // Required empty public constructor
     }
@@ -38,8 +41,33 @@ public class TabFragment1_Informat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View activity=inflater.inflate(R.layout.tab_fragment1_informat, container, false);
         // Inflate the layout for this fragment.
-        return inflater.inflate(R.layout.tab_fragment1_informat, container, false);
+        // Definimos el webView
+        browser=(WebView)activity.findViewById(R.id.webView);
+
+        //Habilitamos JavaScript
+        browser.getSettings().setJavaScriptEnabled(true);
+
+
+        browser.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+        // Cargamos la web
+        if (AppPreferences.getSettings().getString("lang", "es").equals("es")) {
+            browser.loadUrl("file:///android_asset/web/TipusTCAES.html");
+        } else if (AppPreferences.getSettings().getString("lang", "ca").equals("ca")) {
+            browser.loadUrl("file:///android_asset/web/TipusTCACA.html");
+        } else {
+            browser.loadUrl("file:///android_asset/web/TipusTCAEN.html");
+        }
+
+        return activity;
     }
 
 }

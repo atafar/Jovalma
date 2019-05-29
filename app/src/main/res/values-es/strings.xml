@@ -130,8 +130,14 @@
     <string name="quiSom">¿Quién somos?</string>
     <string name="results">Resultados</string>
     <string name="start_over">Vulve a empezar</string>
-    <string name="tancar_sessio">Cierra la session</string>
+    <string name="tancar_sessio">Cierra la sesión</string>
     <string name="test">Test</string>
     <string name="title_activity_mapa_prueba">Mapa</string>
     <string name="torna_al_perfil">Volver atrás</string>
+    <string name="telefono">Teléfono</string>
+    <string name="gender_dona">Mujer</string>
+    <string name="gender_home">Hombre</string>
+    <string name="direccion">Dirección</string>
+    <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?Click aquí</string>
+    <string name="restablecer_pass">Hemos enviado un correo a su cuenta</string>
 </resources>

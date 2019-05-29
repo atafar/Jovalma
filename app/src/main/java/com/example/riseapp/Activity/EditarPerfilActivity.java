@@ -133,12 +133,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
                     .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).circleCrop().into(imgProfile);
         }
 
-        etEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         txtCambiarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

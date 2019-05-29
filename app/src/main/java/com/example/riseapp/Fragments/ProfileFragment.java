@@ -79,7 +79,16 @@ public class ProfileFragment extends Fragment {
             txtEmail.setText(Constants.getCurrentUser().getEmail());
             txtCiudad.setText(Constants.getCurrentUser().getCity());
             txtFechaNacimiento.setText(Constants.getCurrentUser().getDate());
-            txtGenero.setText(Constants.getCurrentUser().getGender());
+
+            if(Constants.getCurrentUser().getGender().equals("Home")||
+                    Constants.getCurrentUser().getGender().equals("Hombre")||
+                    Constants.getCurrentUser().getGender().equals("Male")){
+
+                txtGenero.setText(getString(R.string.gender_home));
+            }else{
+                txtGenero.setText(getString(R.string.gender_dona));
+            }
+
         }
 
         //Información de usuario

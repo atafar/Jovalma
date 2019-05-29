@@ -37,7 +37,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             txtInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(titulo.equals("Teléfono")|| titulo.equals("Telèfono")||titulo.equals("Phone")){
+                    if(titulo.equals(getString(R.string.telefono))){
                         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + info));
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -45,7 +45,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(info));
                         browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(browserIntent);
-                    } else if (titulo.equals("Correu electrònic") || titulo.equals("Correo electrónico") || titulo.equals("Email")) {
+                    } else if (titulo.equals(getString(R.string.email)) ) {
 
                         startActivity(sendEmail(info));
                     }

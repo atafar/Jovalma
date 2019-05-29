@@ -136,5 +136,11 @@
     <string name="test">Test</string>
     <string name="title_activity_mapa_prueba">Map</string>
     <string name="torna_al_perfil">Go back</string>
+    <string name="telefono">Phone</string>
+    <string name="gender_dona">Female</string>
+    <string name="gender_home">Male</string>
+    <string name="direccion">Adress</string>
+    <string name="has_olvidado_tu_contrase_a">Have you forgotten your password? Clcik here</string>
+    <string name="restablecer_pass">We have sent an email to your account</string>
 
 </resources>

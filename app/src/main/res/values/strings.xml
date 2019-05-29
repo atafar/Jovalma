@@ -82,7 +82,7 @@
     <string name="test">Test</string>
     <string name="telefono">Teléfono</string>
     <string name="direccion">Dirección</string>
-    <string name="web">Web</string>
+    <string name="web" translatable="false">Web</string>
     <string name="email">Email</string>
 
     <array name="all_questions">
@@ -128,5 +128,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gender_home">Home</string>
+    <string name="gender_dona">Dona</string>
+    <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?Click aquí</string>
+    <string name="restablecer_pass">Hemos enviado un correo a su cuenta</string>
 
 </resources>
