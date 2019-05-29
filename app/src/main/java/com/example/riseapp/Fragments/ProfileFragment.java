@@ -42,14 +42,6 @@ public class ProfileFragment extends Fragment {
         Glide.with(activity.getContext()).load(Constants.getCurrentUserProfileImage())
                 .apply(RequestOptions.skipMemoryCacheOf(true))
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).circleCrop().into(imgProfile);
-        //Botón Dietas
-        com.getbase.floatingactionbutton.FloatingActionButton fabDietas = activity.findViewById(R.id.fabDietas);
-        fabDietas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         //Botón EditarPerfilActivity
         com.getbase.floatingactionbutton.FloatingActionButton fabEditarPerfil = activity.findViewById(R.id.fabEditarPerfil);

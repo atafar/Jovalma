@@ -70,19 +70,19 @@ public class ContactaFragment extends Fragment implements OnMapReadyCallback, Bo
         View activity = inflater.inflate(R.layout.mapa_fragment, container, false);
         LocaleHelper.setLocale(activity.getContext(), AppPreferences.getSettings().getString("lang","es"));
 
-//        contacto1 = new Contacte(677420309, "Maria Del Carmen De La Felicidad", "Psicóloga", "c/ Prueba 123", 41.556310,2.398183,  "azucar.com", "1@1.1");
-//        contacto2 = new Contacte(654125458, "Mario", "Psicólogo", "c/ Prueba 999", 41.397216, 2.148798, "pera.com", "2@1.1");
-//        contacto3 = new Contacte(455214532, "Pepe", "Sicario", "c/ Prueba 666", 41.386765,2.152145,  "melon.com", "3@1.1");
-//        contacto4 = new Contacte(695412545, "Carmen", "Fontanera", "c/ Salud 123", 41.545757,2.109956, "piña.com", "4@1.1");
-//        contacto5 = new Contacte(145236574, "Pedro", "Medico", "c/ Palma 123", 41.398048,2.151553,  "melocoton.com", "5@1.1");
-//
-//        mContactos.add(contacto1);
-//        mContactos.add(contacto2);
-//        mContactos.add(contacto3);
-//        mContactos.add(contacto4);
-//        mContactos.add(contacto5);
+        contacto1 = new Contacte(677420309, "Maria Del Carmen De La Felicidad", "Psicóloga", "c/ Prueba 123", 41.556310,2.398183,  "azucar.com", "1@1.1");
+        contacto2 = new Contacte(654125458, "Mario", "Psicólogo", "c/ Prueba 999", 41.397216, 2.148798, "pera.com", "2@1.1");
+        contacto3 = new Contacte(455214532, "Pepe", "Sicario", "c/ Prueba 666", 41.386765,2.152145,  "melon.com", "3@1.1");
+        contacto4 = new Contacte(695412545, "Carmen", "Fontanera", "c/ Salud 123", 41.545757,2.109956, "piña.com", "4@1.1");
+        contacto5 = new Contacte(145236574, "Pedro", "Medico", "c/ Palma 123", 41.398048,2.151553,  "melocoton.com", "5@1.1");
 
-        mContactos = GestionConexion.getContactes();
+        mContactos.add(contacto1);
+        mContactos.add(contacto2);
+        mContactos.add(contacto3);
+        mContactos.add(contacto4);
+        mContactos.add(contacto5);
+
+//        mContactos = GestionConexion.getContactes();
 
 
         mRecyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);

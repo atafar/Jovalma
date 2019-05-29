@@ -192,14 +192,6 @@
         >
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabDietas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-            app:fab_title="@string/les_meves_dietes"
-            app:fab_icon="@drawable/ic_favorite"
-            />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabEditarPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
