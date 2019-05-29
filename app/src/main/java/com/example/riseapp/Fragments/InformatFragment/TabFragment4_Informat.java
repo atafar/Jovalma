@@ -45,12 +45,13 @@ public class TabFragment4_Informat extends Fragment {
         });
         // Cargamos la web
         if (AppPreferences.getSettings().getString("lang", "es").equals("es")) {
-            browser.loadUrl("file:///android_asset/web/RiscTCAES.html");
+            browser.loadUrl("file:///android_asset/web/CreenciesES.html");
         } else if (AppPreferences.getSettings().getString("lang", "ca").equals("ca")) {
-            browser.loadUrl("file:///android_asset/web/RiscTCACA.html");
+            browser.loadUrl("file:///android_asset/web/CreenciesCA.html");
         } else {
-            browser.loadUrl("file:///android_asset/web/RiscTCAEN.html");
+            browser.loadUrl("file:///android_asset/web/CreenciesEN.html");
         }
+
         return activity;
     }
 
