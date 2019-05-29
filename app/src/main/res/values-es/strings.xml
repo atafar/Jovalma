@@ -140,4 +140,16 @@
     <string name="direccion">Dirección</string>
     <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?Click aquí</string>
     <string name="restablecer_pass">Hemos enviado un correo a su cuenta</string>
+    <string name="alimentacio">ALIMENTACIÓN</string>
+    <string name="creencies_falses">CREENCIAS FALSAS TCA</string>
+    <string name="direccion">Dirección</string>
+    <string name="gender_dona">Mujer</string>
+    <string name="gender_home">Hombre</string>
+    <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?Click aquí</string>
+    <string name="habilitats_socials">HABILIDADES SOCIALES</string>
+    <string name="restablecer_pass">Hemos enviado un correo a su cuenta</string>
+    <string name="senyals_alerta">SEÑALES DE ALERTA</string>
+    <string name="riscos">RIESGOS TCA</string>
+    <string name="tipusTca">TIPOS TCA</string>
+    <string name="telefono">Teléfono</string>
 </resources>
