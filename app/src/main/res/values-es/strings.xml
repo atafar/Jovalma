@@ -146,4 +146,7 @@
     <string name="senyals_alerta">SEÑALES DE ALERTA</string>
     <string name="riscos">RIESGOS TCA</string>
     <string name="tipusTca">TIPOS TCA</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="mensajeWarning">Los resultados de este test pueden no ser correctos, en cualquier caso o tipo de duda contacte con un profesional</string>
 </resources>

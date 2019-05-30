@@ -117,6 +117,23 @@ public class TabFragment7_Informat extends Fragment {
         }
         current_question = 0;
         showQuestion();
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity.getContext());
+        builder.setTitle(R.string.advertencia);
+        builder.setMessage(R.string.mensajeWarning);
+        builder.setCancelable(false);
+        builder.setPositiveButton(R.string.cerrar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        /*builder.setNegativeButton(R.string.start_over, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startOver();
+            }
+        });*/
+        builder.create().show();
     }
 
     private void checkResults() {

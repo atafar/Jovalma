@@ -148,5 +148,8 @@
     <string name="senyals_alerta">ALERT SIGNS</string>
     <string name="riscos">RISKS TCA</string>
     <string name="tipusTca">TCA TYPE</string>
+    <string name="advertencia">Warning</string>
+    <string name="cerrar">Close</string>
+    <string name="mensajeWarning">The results of this test may not be correct, in any case or type of doubt contact a professional</string>
 
 </resources>
