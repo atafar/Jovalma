@@ -14,6 +14,8 @@ import com.example.riseapp.Fragments.ContactaFragment.BottomSheetDialog;
 import com.example.riseapp.Fragments.ContactaFragment.ContactaFragment;
 import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Fragments.InformatFragment.InformatFragment;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment1_Informat;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment2_Informat;
 import com.example.riseapp.Fragments.JovalmaFragment.JovalmaFragment;
 import com.example.riseapp.Fragments.ProfileFragment;
 import com.example.riseapp.Helper.AppPreferences;
@@ -88,7 +90,8 @@ private Fragment fragment;
     @Override
     public void onBackPressed()
     {
-        if(ForoFragment.browser != null) {
+        if (ForoFragment.browser != null || TabFragment1_Informat.browser != null || TabFragment2_Informat.browser != null || TabFragment1_Informat.browser != null
+        {
             if (ForoFragment.browser.canGoBack()) {
                 ForoFragment.browser.goBack();
             }
