@@ -11,7 +11,7 @@
         android:title="@string/mapa" />
     <item
         android:id="@+id/navigation_empresa"
-        android:icon="@drawable/ic_edit"
+        android:icon="@drawable/ic_logo"
         android:title="@string/quisom" />
     <item
         android:id="@+id/navigation_forum"

@@ -127,10 +127,16 @@
     </array>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="gender_home">Home</string>
     <string name="gender_dona">Dona</string>
     <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?Click aquí</string>
     <string name="restablecer_pass">Hemos enviado un correo a su cuenta</string>
+    <string name="habilitats_socials">HABILITATS SOCIALS</string>
+    <string name="alimentacio">ALIMENTACIÓ</string>
+    <string name="creencies_falses">CREENCES FALSES TCA</string>
+    <string name="riscos">RISCOS TCA</string>
+    <string name="senyals_alerta">SENYALS D\'ALERTA</string>
+    <string name="tipusTca">TIPUS TCA</string>
 
 </resources>

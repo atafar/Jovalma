@@ -16,6 +16,10 @@ import com.example.riseapp.Fragments.ForoFragment;
 import com.example.riseapp.Fragments.InformatFragment.InformatFragment;
 import com.example.riseapp.Fragments.InformatFragment.TabFragment1_Informat;
 import com.example.riseapp.Fragments.InformatFragment.TabFragment2_Informat;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment3_Informat;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment4_Informat;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment5_Informat;
+import com.example.riseapp.Fragments.InformatFragment.TabFragment6_Informat;
 import com.example.riseapp.Fragments.JovalmaFragment.JovalmaFragment;
 import com.example.riseapp.Fragments.ProfileFragment;
 import com.example.riseapp.Helper.AppPreferences;
@@ -88,12 +92,35 @@ private Fragment fragment;
             };
 
     @Override
-    public void onBackPressed()
-    {
-        if (ForoFragment.browser != null || TabFragment1_Informat.browser != null || TabFragment2_Informat.browser != null || TabFragment1_Informat.browser != null
-        {
+    public void onBackPressed() {
+        if (ForoFragment.browser != null) {
             if (ForoFragment.browser.canGoBack()) {
                 ForoFragment.browser.goBack();
+            }
+
+        } else if (TabFragment1_Informat.browser != null) {
+            if (TabFragment1_Informat.browser.canGoBack()) {
+                TabFragment1_Informat.browser.goBack();
+            }
+        } else if (TabFragment2_Informat.browser != null) {
+            if (TabFragment2_Informat.browser.canGoBack()) {
+                TabFragment2_Informat.browser.goBack();
+            }
+        } else if (TabFragment3_Informat.browser != null) {
+            if (TabFragment3_Informat.browser.canGoBack()) {
+                TabFragment3_Informat.browser.goBack();
+            }
+        } else if (TabFragment4_Informat.browser != null) {
+            if (TabFragment4_Informat.browser.canGoBack()) {
+                TabFragment4_Informat.browser.goBack();
+            }
+        } else if (TabFragment5_Informat.browser != null) {
+            if (TabFragment5_Informat.browser.canGoBack()) {
+                TabFragment5_Informat.browser.goBack();
+            }
+        } else if (TabFragment6_Informat.browser != null) {
+            if (TabFragment6_Informat.browser.canGoBack()) {
+                TabFragment6_Informat.browser.goBack();
             }
         }
     }

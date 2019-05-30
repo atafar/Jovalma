@@ -19,7 +19,6 @@ public class TabFragment3_Informat extends Fragment {
 
     public static WebView browser;
 
-
     public TabFragment3_Informat() {
         // Required empty public constructor
     }
@@ -29,8 +28,7 @@ public class TabFragment3_Informat extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View activity = inflater.inflate(R.layout.fragment_tab_fragment3__informat, container, false);
-        // Inflate the layout for this fragment
-        // Definimos el webView
+
         browser = (WebView) activity.findViewById(R.id.webView);
 
         //Habilitamos JavaScript
@@ -47,12 +45,14 @@ public class TabFragment3_Informat extends Fragment {
         });
         // Cargamos la web
         if (AppPreferences.getSettings().getString("lang", "es").equals("es")) {
-            browser.loadUrl("file:///android_asset/web/FactorsRiscES.html");
+            browser.loadUrl("file:///android_asset/web/RiscTCAES.html");
         } else if (AppPreferences.getSettings().getString("lang", "ca").equals("ca")) {
-            browser.loadUrl("file:///android_asset/web/FactorsRiscCA.html");
+            browser.loadUrl("file:///android_asset/web/RiscTCACA.html");
         } else {
-            browser.loadUrl("file:///android_asset/web/FactorsRiscEN.html");
+            browser.loadUrl("file:///android_asset/web/RiscTCAEN.html");
         }
+
+
         return activity;
     }
 
